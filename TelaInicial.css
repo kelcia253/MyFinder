@@ -1,0 +1,101 @@
+
+#divBusca{
+    background-color:#ffffff;
+    border:solid 2px #c0c3c4;
+    border-radius:10px;
+    width:300px;
+    height:32px;
+  }
+  
+  #txtBusca{
+    float:left;
+    background-color:transparent;
+    padding-left:5px;
+    font-size:18px;
+    border:none;
+    height:32px;
+    width:223px;
+  }
+  
+  #btnBusca{
+    border:none;
+    float:left;
+    height:32px;
+    border-radius:0 7px 7px 0;
+    width:70px;
+    font-weight:bold;
+    background:#989c9c;
+  }
+
+  #ofertas{
+    text-align: center;
+   
+  }
+
+  #oferta{
+    max-width: 100%;
+    margin: 50px auto;
+    background-color: #AB9E92;
+    padding: 20px;
+    border-radius: 9px;
+  }
+
+  .menuhorizontal{
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: 30px;
+    }
+
+    .menuhorizontal ul{
+        list-style: none;
+        }
+
+    .menuhorizontal li{
+            display: inline;
+            float: left;
+            padding:0px;
+            margin: 0;
+            width: 80px;
+            border-left: #000000 thin solid;
+            }
+
+.menuhorizontal a{
+  display: block;
+  text-decoration: none;
+  padding: 6px;
+  background-color: #ffffff00;
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.menuhorizontal :hover{
+   background-color: #979494;
+    text-decoration: none;
+    color: #141414;
+  }
+
+.menuhorizontal li.btnesquerdo{
+border: none;}
+
+  
+  .h1{
+    color:#AB9E92;
+  }
+
+  .login{
+
+    max-width: 100px;
+    margin: 0px ;
+    background-color: #AB9E92;
+    border-radius: 50px;
+    float: right;
+    font-size: large;
+    height: 200px
+  
+    
+
+  }
+
+  
