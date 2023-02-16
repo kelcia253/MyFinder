@@ -4,3 +4,9 @@ CREATE TABLE cliente(
 	email VARCHAR(100) NOT NULL,
 	senha VARCHAR(10) NOT NULL,
 	PRIMARY KEY (id_cliente));
+	
+	
+INSERT INTO cliente VALUES (NULL, "Noemi","neomi@gmail.com", MD5('123'));
+INSERT INTO cliente VALUES (NULL, "Matheus","matheus@gmail.com",  MD5('123'));
+INSERT INTO cliente VALUES (NULL, "Julian","Julian@gmail.com",  MD5('123'));
+

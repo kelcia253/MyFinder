@@ -1,3 +1,8 @@
+<?php
+  include("conexao.php");
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +18,18 @@
 <body>
   
     <form action="" method="post">
-        
+        <h1>Acesse sua conta</h1>
+        <p>
+            <label>Email</label>
+            <input type="email" name="email" autofocus required>
+            </p>
+        <p>
+        <label>Senha</label>
+        <input type="password" name="senha"  required>
+        </p>
+        <p>
+            <button type="submit"> Entrar</button>
+        </p>
     </form>
  
   
