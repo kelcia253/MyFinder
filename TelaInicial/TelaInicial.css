@@ -97,5 +97,15 @@ border: none;}
     
 
   }
+ 
+  #btnCadastro{
+    align-items: right;
+
+  }
+
+  #btnLogin{
+    margin-left: 1612px;
+  }
+
 
   
