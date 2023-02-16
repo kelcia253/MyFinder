@@ -1,5 +1,44 @@
 <?php
   include("conexao.php");
+
+  if(isset($_POST['nome']) || isset($_POST['email']) || isset($_POST['senha'])){
+    if(strlen($_POST['nome'])==0){
+        echo"Preencha seu nome"
+    }
+    else if(strlen($_POST['email'])==0){
+        echo"Preencha seu email"
+    }
+    else if(strlen($_POST['senha'])==0){
+        echo"Preencha sua senha"
+    }
+    else{
+        $nome = $mysqli->real_escape_string(&_POST['nome']);
+        $email = $mysqli->real_escape_string(&_POST['email']);
+        $senha = $mysqli->real_escape_string(&_POST['senha']);
+
+        $sql_code = "SELECT * FROM cliente WHERE nome = '$nome' AND email = '$email' AND senha ='$senha'";
+        $sql_query = $mysqli->query($sql_code) or die("Falha na execução do banco de dados" . $mysqli->error);
+
+        $quantidade = $sql_query->num_rows;
+
+        if($quantidade == 1){
+
+            $ususario = $sql_query->fetch_assoc();
+            if(!isset($_SESSION)){
+                session_start();
+            }
+            $_SESSION['user'] = $cliente['id'];
+            $_SESSION['name'] = $cliente['nome']
+
+            header("Location: painel.php")
+
+
+        }else{
+            echo "Falha ao logar! Email senha ou nome incorretos";
+        }
+    }
+
+  }
 ?>
 
 
