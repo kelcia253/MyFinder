@@ -54,9 +54,9 @@
     <script src='../js/bootstrap.bundle.min.js'></script>
     <script src='main.js'></script>
 </head>
-<body>
+<body class="text-center">
   
-    <form action="" method="post">
+    <form class="form-signin" action="" method="post">
         <h1>Acesse sua conta</h1>
         <p>
             <label>Email</label>
