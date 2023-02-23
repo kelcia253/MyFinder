@@ -11,11 +11,11 @@
     }
     else{
        
-        $email = $mysqli->real_escape_string($_POST['email']);
-        $senha = $mysqli->real_escape_string($_POST['senha']);
+        $email = $conexao->real_escape_string($_POST['email']);
+        $senha = $conexao->real_escape_string($_POST['senha']);
 
         $sql_code = "SELECT * FROM cliente WHERE email = '$email' AND senha ='$senha'";
-        $sql_query = $mysqli->query($sql_code) or die("Falha na execução do banco de dados" . $mysqli->error);
+        $sql_query = $conexao->query($sql_code) or die("Falha na execução do banco de dados" . $conexao->error);
         
 
         $quantidade = $sql_query->num_rows;

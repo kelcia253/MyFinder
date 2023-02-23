@@ -1,3 +1,5 @@
+
+<!DOCTYPE html>
 <html>
     
 <head>
@@ -7,7 +9,7 @@
     <title>Sistema de Cadastro - PHP + MySQL - Canal TI</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/bulma.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="../login/css">
 </head>
  
 <body>
@@ -16,7 +18,6 @@
             <div class="container has-text-centered">
                 <div class="column is-4 is-offset-4">
                     <h3 class="title has-text-grey">Sistema de Cadastro</h3>
-                    <h3 class="title has-text-grey"><a href="https://youtube.com/canaltioficial" target="_blank">Canal TI</a></h3>
                     <div class="notification is-success">
                       <p>Cadastro efetuado!</p>
                       <p>Faça login informando o seu usuário e senha <a href="login.php">aqui</a></p>
@@ -33,7 +34,7 @@
                             </div>
                             <div class="field">
                                 <div class="control">
-                                    <input name="usuario" type="text" class="input is-large" placeholder="Usuário">
+                                    <input name="email" type="text" class="input is-large" placeholder="Email">
                                 </div>
                             </div>
                             <div class="field">
