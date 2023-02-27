@@ -56,13 +56,11 @@
     <link rel="stylesheet" href="./loginCss/login.css">
 </head>
 <body class="text-center">
-  
-
     <form class="form-signin">
     <div class="border border-dark p-2 mb-2 border-2 border" id="borda">
         <h1 class="h3 mb-3 font-weight-normal">Acesso ao sistema</h1>
-        <label for="inputNome" class="sr-only"></label> 
-        <input type="text" id="inputNome" class="form-control" placeholder="Nome" required autofocus>
+        <label for="inputEmail" class="sr-only"></label> 
+        <input type="text" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
         <label for="inputPassword" class="sr-only"></label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
         <div id="botaologin">

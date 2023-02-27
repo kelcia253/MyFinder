@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./loginCss/cadastro.css">
 </head>
  
-<body class="form-signin">
+<body class="text-center">
 <form class="form-signin">
     <div class="border border-dark p-2 mb-2 border-2 border" id="borda">
         <h1 class="h3 mb-3 font-weight-normal align-self-center">Cadastre-se</h1>
