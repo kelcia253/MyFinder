@@ -14,7 +14,7 @@
         $email = $conexao->real_escape_string($_POST['email']);
         $senha = $conexao->real_escape_string($_POST['senha']);
 
-        $sql_code = "SELECT * FROM cliente WHERE email = '$email' AND senha ='$senha'";
+        $sql_code = "SELECT * FROM cliente WHERE email = '$email' AND senha =(MD5('$senha'))";
         $sql_query = $conexao->query($sql_code) or die("Falha na execução do banco de dados" . $conexao->error);
         
 
@@ -56,13 +56,13 @@
     <link rel="stylesheet" href="./loginCss/login.css">
 </head>
 <body class="text-center">
-    <form class="form-signin">
+    <form class="form-signin" action="" method="post">
     <div class="border border-dark p-2 mb-2 border-2 border" id="borda">
         <h1 class="h3 mb-3 font-weight-normal">Acesso ao sistema</h1>
         <label for="inputEmail" class="sr-only"></label> 
-        <input type="text" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+        <input type="email" class="form-control" name="email" autofocus required>
         <label for="inputPassword" class="sr-only"></label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+        <input type="password" name="senha" class="form-control" required>
         <div id="botaologin">
     <button class="btn btn-Lg btn-dark btn-block" type="submit">Enviar</button>
     <button class="btn btn-Lg btn-dark btn-block" type="reset">Limpar</button>
