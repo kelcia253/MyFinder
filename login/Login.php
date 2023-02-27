@@ -59,20 +59,20 @@
   
 
     <form class="form-signin">
-       
+    <div class="border border-dark p-2 mb-2 border-2 border" id="borda">
         <h1 class="h3 mb-3 font-weight-normal">Acesso ao sistema</h1>
         <label for="inputLogin" class="sr-only"></label> 
         <input type="text" id="inputLogin" class="form-control" placeholder="Login" required autofocus>
         <label for="inputPassword" class="sr-only"></label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
-        <div id="login">
-    <button class="btn btn-Lg btn-primary btn-block" type="submit">Enviar</button>
+        <div id="botaologin">
+    <button class="btn btn-Lg btn-dark btn-block" type="submit">Enviar</button>
+    <button class="btn btn-Lg btn-dark btn-block" type="reset">Limpar</button>
     </div>
     <p class="mt-5 mb-3 text-muted">Desde 2023</p>
-    </form>
-  
-  
-       
-      
+    </form>   
+    </div>
+
+   
 </body>
 </html>

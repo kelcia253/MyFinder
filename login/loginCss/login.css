@@ -49,3 +49,10 @@ body{
     }
 }
 
+#borda{
+    border-radius: 10px;
+}
+#botaologin{
+    margin-top: 20px;
+   align-items: center;
+}
