@@ -53,24 +53,24 @@
     <link rel = 'stylesheet' type = 'text/css' media='screen' href='../css/bootstrap.min.css'>
     <script src='../js/bootstrap.bundle.min.js'></script>
     <script src='main.js'></script>
+    <link rel="stylesheet" href="./loginCss/login.css">
 </head>
 <body class="text-center">
   
-    <form class="form-signin" action="" method="post">
-        <h1>Acesse sua conta</h1>
-        <p>
-            <label>Email</label>
-            <input type="email" name="email" autofocus required>
-            </p>
-        <p>
-        <label>Senha</label>
-        <input type="password" name="senha"  required>
-        </p>
-        <p>
-            <button type="submit"> Entrar</button>
-        </p>
+
+    <form class="form-signin">
+       
+        <h1 class="h3 mb-3 font-weight-normal">Acesso ao sistema</h1>
+        <label for="inputLogin" class="sr-only"></label> 
+        <input type="text" id="inputLogin" class="form-control" placeholder="Login" required autofocus>
+        <label for="inputPassword" class="sr-only"></label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+        <div id="login">
+    <button class="btn btn-Lg btn-primary btn-block" type="submit">Enviar</button>
+    </div>
+    <p class="mt-5 mb-3 text-muted">Desde 2023</p>
     </form>
- 
+  
   
        
       

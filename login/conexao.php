@@ -12,6 +12,6 @@ $conexao = mysqli_connect($servername, $username, $password, $database) or die (
 //if ($mysqli->connect_errno) {
 //    die("Falha ao conectar ao banco de dados: " . mysqli_connect_error());
 //}
-echo "Conectado com sucesso";
+//echo "Conectado com sucesso";
 //mysqli_close($mysqli);
 ?>
