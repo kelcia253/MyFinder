@@ -60,9 +60,9 @@
     <div class="border border-dark p-2 mb-2 border-2 border" id="borda">
         <h1 class="h3 mb-3 font-weight-normal">Acesso ao sistema</h1>
         <label for="inputEmail" class="sr-only"></label> 
-        <input type="email" class="form-control" name="email" autofocus required>
+        <input type="email" class="form-control" name="email" autofocus required placeholder="Digite seu e-mail">
         <label for="inputPassword" class="sr-only"></label>
-        <input type="password" name="senha" class="form-control" required>
+        <input type="password" name="senha" class="form-control" required placeholder="Digite sua senha">
         <div id="botaologin">
     <button class="btn btn-Lg btn-dark btn-block" type="submit">Enviar</button>
     <button class="btn btn-Lg btn-dark btn-block" type="reset">Limpar</button>
