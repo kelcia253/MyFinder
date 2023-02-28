@@ -5,5 +5,12 @@
  $dbPassword = '';
  $dbName = 'myfinder';
 
- $conexao = new mysqli($dbHost, )
+ $conexao = new mysqli($dbHost, $dbUsername, $dbPassword,  $dbName);
+
+ if($conexao->connect_errno){
+echo "Erro!"
+ }
+ else{
+  echo"conectado com sucesso";
+ }
 ?>

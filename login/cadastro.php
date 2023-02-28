@@ -1,4 +1,13 @@
+<?php
 
+if(isset($POST['submit'])){
+    print_r($_POST['nome']);
+    print_r('<br>');
+    print_r($_POST['email']);
+    print_r('<br>');
+  
+}
+?>
 <!DOCTYPE html>
 <html>
     
@@ -15,7 +24,7 @@
 </head>
  
 <body class="text-center">
-<form class="form-signin">
+<form class="form-signin" method="POST" action="cadastro.php">
     <div class="border border-dark p-2 mb-2 border-2 border" id="borda">
         <h1 class="h3 mb-3 font-weight-normal align-self-center">Cadastre-se</h1>
         <label for="inputNome" class="sr-only"></label> 
