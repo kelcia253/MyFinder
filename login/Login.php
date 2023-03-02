@@ -13,7 +13,7 @@
        
         $email = $conexao->real_escape_string($_POST['email']);
         $senha = $conexao->real_escape_string($_POST['senha']);
-        $senha = MD5('$senha');
+        $senha = md5($senha);
 
         $sql_code = "SELECT * FROM cliente WHERE email = '$email' AND senha = '$senha'";
         $sql_query = $conexao->query($sql_code) or die("Falha na execução do banco de dados" . $conexao->error);
@@ -68,6 +68,7 @@
     <button class="btn btn-Lg btn-dark btn-block" type="submit">Enviar</button>
     <button class="btn btn-Lg btn-dark btn-block" type="reset">Limpar</button>
     </div>
+    <h8>Não tem cadastro? <a href="../login/cadastro.php">Clique aqui!</a></h8>
     <p class="mt-5 mb-3 text-muted">Desde 2023</p>
     </form>   
     </div>

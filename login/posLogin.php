@@ -65,9 +65,6 @@ include('protect.php');
         </section>
         <!--Fim da imagem-->
 
-    <p>
-        <a href="../login/logout.php">Sair</a>
-       
-    </p>
+   
 </body>
 </html>

@@ -14,24 +14,23 @@ echo($sql);
 
 if($row['total'] == 1){
     $_SESSION['cliente_existe'] = true;
+     
+
     header('Location: cadastro.php');
     exit;
 }
-$senha = MD5($senha);
+
 $sql = "INSERT INTO cliente (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
 
 
 $result = mysqli_query($conexao, $sql);
-$row = mysqli_fetch_assoc($result);
-if($conexao->query($sql) === TRUE){
-    $_SESSION['status_cadastro'] = true;
-}
+//$row = mysqli_fetch_assoc($result);
+//if($conexao->query($sql) === TRUE){
+//    $_SESSION['status_cadastro'] = true;
+//}
 
 
 echo("sql: ".$sql);
-
-
-
-
+header("Location: posLogin.php");
 
 ?>
