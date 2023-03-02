@@ -8,5 +8,5 @@ CREATE TABLE cliente(
 	
 INSERT INTO cliente VALUES (NULL, "Noemi","neomi@gmail.com", MD5('123'));
 INSERT INTO cliente VALUES (NULL, "Matheus","matheus@gmail.com",  MD5('123'));
-INSERT INTO cliente VALUES (NULL, "Julian","Julian@gmail.com",  MD5('123'));
+INSERT INTO cliente VALUES (NULL, "Nefi","Nefi@gmail.com",  MD5('123'));
 
