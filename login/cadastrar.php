@@ -1,4 +1,5 @@
 <?php
+//echo $_SERVER['REQUEST_METHOD'];
 session_start();
 include("conexao.php");
 
@@ -9,19 +10,22 @@ $senha = mysqli_real_escape_string($conexao,trim(md5($_POST['senha'])));
 $sql = "SELECT COUNT(*) AS total FROM cliente WHERE email = '".$email."'";
 $result = mysqli_query($conexao, $sql);
 $row = mysqli_fetch_assoc($result);
+echo($sql);
 
 if($row['total'] == 1){
     $_SESSION['cliente_existe'] = true;
     header('Location: cadastro.php');
     exit;
 }
+$senha = MD5($senha);
 $sql = "INSERT INTO cliente (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
+
 
 $result = mysqli_query($conexao, $sql);
 $row = mysqli_fetch_assoc($result);
-//if($conexao->query($sql) === TRUE){
-   // $_SESSION['status_cadastro'] = true;
-//}
+if($conexao->query($sql) === TRUE){
+    $_SESSION['status_cadastro'] = true;
+}
 
 
 echo("sql: ".$sql);

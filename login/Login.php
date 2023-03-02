@@ -13,11 +13,12 @@
        
         $email = $conexao->real_escape_string($_POST['email']);
         $senha = $conexao->real_escape_string($_POST['senha']);
+        $senha = MD5('$senha');
 
-        $sql_code = "SELECT * FROM cliente WHERE email = '$email' AND senha =(MD5('$senha'))";
+        $sql_code = "SELECT * FROM cliente WHERE email = '$email' AND senha = '$senha'";
         $sql_query = $conexao->query($sql_code) or die("Falha na execução do banco de dados" . $conexao->error);
         
-
+        echo($sql_code);
         $quantidade = $sql_query->num_rows;
 
         if($quantidade == 1){
@@ -30,7 +31,7 @@
             $_SESSION['user'] = $cliente['id'];
             $_SESSION['name'] = $cliente['nome'];
 
-           header("Location: painel.php");
+           header("Location: posLogin.php");
 
 
         }else{
