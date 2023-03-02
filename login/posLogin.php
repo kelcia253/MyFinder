@@ -30,7 +30,7 @@ include('protect.php');
       </nav>
       <!--fim do nome do site-->
 
-      <!--MENU de notificação-->
+      <!--MENU de navegação-->
           <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
               <a class="navbar-brand" href="../login/posLogin.php">Principal</a>
@@ -42,9 +42,7 @@ include('protect.php');
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="../MeusProdutos/MeusProdutos.html">Meus Produtos</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../Configuraçoes/configuracoes.html">Novo Produto</a>
-                  </li>
+                  
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="../Configuraçoes/configuracoes.html">Configurações</a>
                   </li>
