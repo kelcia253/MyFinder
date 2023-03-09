@@ -1,3 +1,16 @@
+<?php
+include('conexao.php');
+
+
+
+?>
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,13 +54,39 @@
              
             </ul>
             <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Pesquisar..." aria-label="Search">
+              <input class="form-control me-2" type="search" name="pesquisar" placeholder="Pesquisar..." aria-label="Search">
               <button class="btn btn-outline-dark" type="submit">Pesquisar</button>
             </form>
           </div>
         </div>
       </nav>
       <!--Fim do menu-->
+
+
+      <!--Cards-->
+<?php
+      $pesquisa = mysqli_real_escape_string ($conexao,trim($_POST['titulo']));
+      $sql_code = "SELECT * FROM produtos";
+      $sql_query = $conexao->query($sql_code) or die("Falha na execução do banco de dados" . $conexao->error);
+      while($dados = $sql_query->fetch_assoc()){
+        //<td><?php echo $dados['nome'];</td>
+        
+        ?>
+     
+  
+
+
+      <div class="card" style="width: 18rem;">
+        <div class="card text-center">
+          <div class="card-header" name="titulo" id="titulo" method="POST">
+          <?php echo $dados['nome']?>
+          </div>
+          <div class="card-body">
+            <p class="card-text"><?php echo $dados['descricao']?></p>
+            <a href="<?php echo $dados['link']?>" class="btn btn-primary" target="_blank">Visitar</a>
+          </div>
+        </div>
+      <?php } ?>
 
       
 </body>

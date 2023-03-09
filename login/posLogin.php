@@ -1,6 +1,10 @@
 <?php  
 
 include('protect.php');
+include('conexao.php');
+
+
+
 ?>
 
 
@@ -40,7 +44,7 @@ include('protect.php');
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../MeusProdutos/MeusProdutos.html">Meus Produtos</a>
+                    <a class="nav-link active" aria-current="page" href="MeusProdutos.php">Meus Produtos</a>
                   </li>
                   
                   <li class="nav-item">
@@ -50,16 +54,18 @@ include('protect.php');
                 </ul>
 
                 <!--Navegção-->
-                <div clas=""box-search>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Pesquisar..." id="pesquisar" aria-label="Search">
-                  <button class="btn btn-outline-dark" type="submit">Pesquisar</button>
+                <div class=""box-search>
+                <form class="d-flex" role="search" method="POST">
+                  <input class="form-control me-2"  type="search" placeholder="Pesquisar..." name="pesquisar" id="pesquisar" aria-label="Search">
+                  <button oncclick="searchData()" class="btn btn-outline-dark" type="submit">Pesquisar</button>
                 </form>
                 
               </div>
               </div>
             </div>
           </nav>
+
+         
           <!--Fim do menu-->
 
 
@@ -70,13 +76,41 @@ include('protect.php');
               </div>
         </section>
         <!--Fim da imagem-->
+        <?php
+          if(!isset($_POST['pesquisar'])){
+            ?>
+            <tr>
+              <td colspan="3">Digite algo para pesquisar...</td>
+            </tr>
+            <?php 
+          } else{
+
+            $pesquisa = mysqli_real_escape_string ($conexao,trim($_POST['pesquisar']));
+            $sql_code = "SELECT * FROM produtos WHERE nome LIKE '%$pesquisa%'";
+
+           $sql_query = $conexao->query($sql_code) or die("Falha na execução do banco de dados" . $conexao->error);
+
+            if($sql_query->num_rows == 0){
+          ?>
+           <tr>
+              <td colspan="3">Nenhum resultado encontrado...</td>
+            </tr>
+            <?php }
+            else{
+              while($dados = $sql_query->fetch_assoc()){
+                ?>
+                <tr>
+                  <td><?php echo $dados['nome'];?></td>
+                </tr>
+                <?php
+              }
+            }
+            ?>
+          
+          <?php } ?>
+
 
    
 </body>
-<script>
-  var search = document.getElementById('pesquisar');
-  function searchData(){
-    window.location = 'TelaInicial.html?search'
-  }
-</srcipt>
+
 </html>
