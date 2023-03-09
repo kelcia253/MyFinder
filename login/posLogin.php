@@ -48,10 +48,15 @@ include('protect.php');
                   </li>
                  
                 </ul>
+
+                <!--Navegção-->
+                <div clas=""box-search>
                 <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Pesquisar..." aria-label="Search">
+                  <input class="form-control me-2" type="search" placeholder="Pesquisar..." id="pesquisar" aria-label="Search">
                   <button class="btn btn-outline-dark" type="submit">Pesquisar</button>
                 </form>
+                
+              </div>
               </div>
             </div>
           </nav>
@@ -68,4 +73,10 @@ include('protect.php');
 
    
 </body>
+<script>
+  var search = document.getElementById('pesquisar');
+  function searchData(){
+    window.location = 'TelaInicial.html?search'
+  }
+</srcipt>
 </html>
