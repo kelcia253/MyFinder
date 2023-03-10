@@ -107,5 +107,11 @@ border: none;}
     margin-left: 1612px;
   }
 
+  .card{
+    margin-top: 20px;
+  
+    display:flex;
+  }
+
 
   

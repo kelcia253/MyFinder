@@ -86,7 +86,7 @@ include('conexao.php');
           } else{
 
             $pesquisa = mysqli_real_escape_string ($conexao,trim($_POST['pesquisar']));
-            $sql_code = "SELECT * FROM produtos WHERE nome LIKE '%$pesquisa%'";
+            $sql_code = "SELECT * FROM produtos WHERE nome LIKE '%$pesquisa%' OR descricao LIKE '%$pesquisa%' OR link LIKE '%$pesquisa%'";
 
            $sql_query = $conexao->query($sql_code) or die("Falha na execução do banco de dados" . $conexao->error);
 
@@ -100,7 +100,21 @@ include('conexao.php');
               while($dados = $sql_query->fetch_assoc()){
                 ?>
                 <tr>
-                  <td><?php echo $dados['nome'];?></td>
+                <div class="card" style="width: 18rem;">
+                <br>
+        <div class="card text-center" class="card">
+          <div class="card-header" name="titulo" id="titulo" method="POST">
+          <?php echo $dados['nome']?>
+          </div>
+          <br>
+          <div class="card-body">
+            <p class="card-text"><?php echo $dados['descricao']?></p>
+            <a href="<?php echo $dados['link']?>" class="btn btn-primary" target="_blank">Visitar</a>
+          </div>
+              </br>
+              </br>
+        </div>
+        
                 </tr>
                 <?php
               }

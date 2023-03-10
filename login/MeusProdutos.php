@@ -76,7 +76,7 @@ include('conexao.php');
   
 
 
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 18rem;" name="card">
         <div class="card text-center">
           <div class="card-header" name="titulo" id="titulo" method="POST">
           <?php echo $dados['nome']?>
