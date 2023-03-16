@@ -65,7 +65,7 @@ include('conexao.php');
 
       <!--Cards-->
 </br>
-<button class="btn btn-primary" type="button"  onclick="window.location.href = '../login/NovoProduto.php'">Button</button> 
+<button class="btn btn-primary" type="button"  onclick="window.location.href = '../login/NovoProduto.php'">Adicionar Produto</button> 
 <a class="btn btn-primary disabled" role="button" aria-disabled="true"  onclick="window.location.href = '../login/EditarProduto.php'">Editar produto</a>
 <a class="btn btn-secondary disabled" role="button" aria-disabled="true" onclick="window.location.href = '../login/RemoverProduto.php'">Remover produto</a>
 <br>
@@ -95,6 +95,7 @@ include('conexao.php');
           <div class="card-body">
             <p class="card-text"><?php echo $dados['descricao']?></p>
             <a href="<?php echo $dados['link']?>" class="btn btn-primary" target="_blank">Visitar</a>
+            <a href="" class="btn btn-primary" target="_blank">Veja Mais...</a>
           </div>
         </div>
          
