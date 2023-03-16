@@ -64,19 +64,30 @@ include('conexao.php');
 
 
       <!--Cards-->
+</br>
+<button class="btn btn-primary" type="button"  onclick="window.location.href = '../login/NovoProduto.php'">Button</button> 
+<a class="btn btn-primary disabled" role="button" aria-disabled="true"  onclick="window.location.href = '../login/EditarProduto.php'">Editar produto</a>
+<a class="btn btn-secondary disabled" role="button" aria-disabled="true" onclick="window.location.href = '../login/RemoverProduto.php'">Remover produto</a>
+<br>
+<br>
+
+<table>
+ <tr>
+
 <?php
-      $pesquisa = mysqli_real_escape_string ($conexao,trim($_POST['titulo']));
+      //$pesquisa = mysqli_real_escape_string ($conexao,trim($_POST['titulo']));
       $sql_code = "SELECT * FROM produtos";
       $sql_query = $conexao->query($sql_code) or die("Falha na execução do banco de dados" . $conexao->error);
+    
+  $cont = 0;
+
       while($dados = $sql_query->fetch_assoc()){
         //<td><?php echo $dados['nome'];</td>
-        
+        $cont++;
+
         ?>
-     
-  
-
-
-      <div class="card" style="width: 18rem;" name="card">
+         <td>
+        <div class="card" style="width: 18rem;" name="card">
         <div class="card text-center">
           <div class="card-header" name="titulo" id="titulo" method="POST">
           <?php echo $dados['nome']?>
@@ -86,8 +97,23 @@ include('conexao.php');
             <a href="<?php echo $dados['link']?>" class="btn btn-primary" target="_blank">Visitar</a>
           </div>
         </div>
-      <?php } ?>
-
+         
+        </td>
       
+    <?php 
+    
+    if($cont == 6){
+      $cont = 0;
+    ?>
+    </tr>
+    <tr>
+
+
+    <?php }
+
+    
+    } ?>
+  
+      </table>
 </body>
 </html>
