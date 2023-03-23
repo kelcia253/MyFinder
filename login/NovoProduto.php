@@ -5,7 +5,7 @@ include("conexao.php");
 
 $nome = mysqli_real_escape_string($conexao,trim($_POST['nome']));
 $descricao = mysqli_real_escape_string($conexao,trim($_POST['descricao']));
-$link = mysqli_real_escape_string($conexao,trim(md5($_POST['link'])));   
+$link = mysqli_real_escape_string($conexao,trim($_POST['link']));   
 
 $sql = "SELECT COUNT(*) AS total FROM produtos WHERE nome = '".$nome."'";
 $result = mysqli_query($conexao, $sql);

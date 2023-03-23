@@ -1,6 +1,9 @@
 <?php
 include('conexao.php');
 
+ini_set('display_errors', 1);
+include('conexao.php');
+
 
 
 ?>
@@ -100,6 +103,14 @@ include('conexao.php');
         </div>
          
         </td>
+        <style>
+        .card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  </style>
+
       
     <?php 
     
