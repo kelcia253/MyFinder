@@ -14,20 +14,22 @@
 </head>
 <body>
   <!-- Nome do site-->
-    <nav class="navbar bg-body-tertiary">
+  
+    <nav class="navbar bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             MyFinder
           </a>
-          
-          <button class="btn btn-outline-dark" id="btnLogin" onclick="window.location.href = '../login/Login.php'">Login</button>
-          <button class="btn btn-outline-dark" id="btnCadastro" onclick="window.location.href = '../login/cadastro.php'">Cadastre-se</button>
+          <div class="btnPrincipal">
+          <button class="btn btn-outline-light" id="btnLogin" onclick="window.location.href = '../login/Login.php'" style=" float: rigth">Login</button>
+          <button class="btn btn-outline-light" id="btnCadastro" onclick="window.location.href = '../login/cadastro.php'">Cadastre-se</button>
+        </div>
         </div>
       </nav>
       <!--fim do nome do site-->
 
       <!--MENU de notificação-->
-          <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <nav class="navbar navbar-expand-lg bg-dark">
             <div class="container-fluid">
               <a class="navbar-brand" href="../TelaInicial/TelaInicial.html">Principal</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,10 +38,10 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../login/Login.php">Meus Produtos</a>
+                    <a class="nav-link active meu-produto" aria-current="page" href="../login/Login.php">Meus Produtos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../login/Login.php">Configurações</a>
+                    <a class="nav-link active configuracoes" aria-current="page" href="../login/Login.php">Configurações</a>
                   </li>
                  
                 </ul>
@@ -50,16 +52,28 @@
               </div>
             </div>
           </nav>
+          <div class="bg-dark" style="height: 300px">
+            <section id = "oferta">
+              <div class="box-search">
+                <form class="d-flex justify-content-center" role="search" method="POST">
+
+                  <input  class="form-control me-2"  type="search" placeholder="Pesquisar..." name="pesquisar" id="pesquisar" aria-label="Search">
+                  <button onclick="searchData()" class="btn btn-outline-light" type="submit">Pesquisar</button>
+                </form>
+                
+              </div>
+          </section>
+          </div>
           <!--Fim do menu-->
 
 
-        <!--Imagem de ofertas e promoções-->    
+        <!--Imagem de ofertas e promoções    
         <section id = "oferta">
             <div id = "ofertas">
                 <img src="../imagens/ofertas.png" allign = "middle"/>
               </div>
         </section>
-        <!--Fim da imagem-->
+        Fim da imagem-->
 
 
 </body>

@@ -54,7 +54,7 @@ include('conexao.php');
                 </ul>
 
                 <!--Navegção-->
-                <div class=""box-search>
+                <div class="box-search">
                 <form class="d-flex" role="search" method="POST">
                   <input class="form-control me-2"  type="search" placeholder="Pesquisar..." name="pesquisar" id="pesquisar" aria-label="Search">
                   <button oncclick="searchData()" class="btn btn-outline-dark" type="submit">Pesquisar</button>

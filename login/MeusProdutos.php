@@ -1,8 +1,6 @@
 <?php
 include('conexao.php');
 
-ini_set('display_errors', 1);
-include('conexao.php');
 
 
 
@@ -98,7 +96,7 @@ include('conexao.php');
           <div class="card-body">
             <p class="card-text"><?php echo $dados['descricao']?></p>
             <a href="<?php echo $dados['link']?>" class="btn btn-primary" target="_blank">Visitar</a>
-            <a href="../login/VejaMais.php?id=<?php echo $dados['id_produto']; ?>" class="btn btn-primary">Veja Mais</a>
+            <a href="../login/VejaMais."  class="btn btn-primary">Veja Mais</a>
 
           </div>
         </div>
