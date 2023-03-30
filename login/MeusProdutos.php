@@ -1,7 +1,14 @@
 <?php
 include('conexao.php');
 
-
+/*
+if(isset($_POST['botaoId'])){
+  session_start();
+  $minha_variavel = $_POST['id_produtos2'];
+  echo "estou aqui ".$_POST['id_produtos2'];
+  $_SESSION['minha_variavel'] = $minha_variavel; 
+}
+*/
 
 
 ?>
@@ -79,52 +86,63 @@ include('conexao.php');
       //$pesquisa = mysqli_real_escape_string ($conexao,trim($_POST['titulo']));
       $sql_code = "SELECT * FROM produtos";
       $sql_query = $conexao->query($sql_code) or die("Falha na execução do banco de dados" . $conexao->error);
-    
-  $cont = 0;
-
-      while($dados = $sql_query->fetch_assoc()){
-        //<td><?php echo $dados['nome'];</td>
-        $cont++;
-
-        ?>
-         <td>
-        <div class="card" style="width: 18rem;" name="card">
-        <div class="card text-center">
-          <div class="card-header" name="titulo" id="titulo" method="POST">
-          <?php echo $dados['nome']?>
-          </div>
-          <div class="card-body">
-            <p class="card-text"><?php echo $dados['descricao']?></p>
-            <a href="<?php echo $dados['link']?>" class="btn btn-primary" target="_blank">Visitar</a>
-            <a href="../login/VejaMais."  class="btn btn-primary">Veja Mais</a>
-
-          </div>
-        </div>
-         
-        </td>
-        <style>
-        .card-text {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  </style>
-
       
-    <?php 
-    
-    if($cont == 6){
       $cont = 0;
-    ?>
-    </tr>
-    <tr>
+      
+      while($dados = $sql_query->fetch_assoc()){
+        $cont++;
+        ?>
+        <form action="VejaMais.php" method="POST">
+        <td>
+          <div class="card" style="width: 18rem;" name="card">
+            <div class="card text-center">
+              <div class="card-header" name="titulo" id="titulo" method="POST">
+                <?php echo $dados['nome']?>
+              </div>
+              <div class="card-body">
+                <p class="card-text"><?php echo $dados['descricao']?></p>
+                <a href="<?php echo $dados['link']?>" class="btn btn-primary" target="_blank">Visitar</a>
+      
+              
+                
+                  <?php
+                    $id_produtos2 = $dados['id_produtos'];
+                    //echo"oi".$id_produtos2;
+                  ?>
+                  <input type="text" class="form-control" name="id_produtos" value="<?php echo $id_produtos2 ?>">
+                  <button class="btn btn-Lg btn-dark btn-block" type="submit" name="botaoId">Veja Mais</button>
+          
+                
+
+              </div>
+            </div>
+          </div>     
+        </td>
+        </form>
+        <style>
+          .card-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        </style>
+      
+        <?php 
+        if($cont == 6){
+          $cont = 0;
+          ?>
+          </tr>
+          <tr>
+          <?php 
+        }
+      } 
+      ?>
+      
 
 
-    <?php }
-
-    
-    } ?>
+ 
   
       </table>
+     
 </body>
 </html>
