@@ -58,7 +58,7 @@
 </head>
 <body class="text-center">
     <form class="form-signin" action="" method="post">
-    <div class="border border-dark p-2 mb-2 border-2 border" id="borda">
+    <div class="border border-dark p-2 mb-2 border-2 border quadrado" id="borda">
         <h1 class="h3 mb-3 font-weight-normal">Acesso ao sistema</h1>
         <label for="inputEmail" class="sr-only"></label> 
         <input type="email" class="form-control" name="email" autofocus required placeholder="Digite seu e-mail">
@@ -72,6 +72,7 @@
     <p class="mt-5 mb-3 text-muted">Desde 2023</p>
     </form>   
     </div>
+  
 
    
 </body>

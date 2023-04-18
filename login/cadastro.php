@@ -16,7 +16,7 @@
  
 <body class="text-center">
 <form class="form-signin" action="cadastrar.php" method="post">
-    <div class="border border-dark p-2 mb-2 border-2 border" id="borda">
+    <div class="border border-dark p-2 mb-2 border-2 border cadastro" id="borda">
         <h1 class="h3 mb-3 font-weight-normal align-self-center">Cadastre-se</h1>
         <label for="inputNome" class="sr-only"></label> 
         <input type="text" name="nome" id="inputNome" class="form-control" placeholder="Nome" required autofocus>
