@@ -25,8 +25,8 @@
         <input type="text" name="link" id="inputLink" class="form-control" placeholder="Link..." required>
         <label for="inputLink" class="sr-only"></label>
         <form method="POST" action="processar_upload.php" enctype="multipart/form-data">
-  <label for="imagem">Selecione uma imagem:</label> <br>
-  <input type="file" id="imagem" name="imagem">
+  <label for="imagem">Selecione uma imagem:</label> 
+  <input type="File" id="imagem" name="imagem">
   
 </form>
         <div id="botaoNovo">
