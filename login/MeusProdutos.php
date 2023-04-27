@@ -101,7 +101,7 @@ if(isset($_POST['botaoId'])){
               </div>
               <div class="card-body">
                 <p class="card-text"><?php echo $dados['descricao']?></p>
-                <a href="<?php echo $dados['link']?>" class="btn btn-primary" target="_blank">Visitar</a>
+                <a href="<?php echo $dados['link']?>" class="btn btn-Lg btn-dark btn-block" target="_blank">Visitar</a>
       
               
                 
@@ -109,7 +109,7 @@ if(isset($_POST['botaoId'])){
                     $id_produtos2 = $dados['id_produtos'];
                     //echo"oi".$id_produtos2;
                   ?>
-                  <input type="text" class="form-control" name="id_produtos" value="<?php echo $id_produtos2 ?>">
+                  <input type="text" class="form-control" name="id_produtos" value="<?php echo $id_produtos2 ?>" hidden>
                   <button class="btn btn-Lg btn-dark btn-block" type="submit" name="botaoId">Veja Mais</button>
           
                 

@@ -19,6 +19,13 @@ include('conexao.php');
    <script src='../js/bootstrap.bundle.min.js'></script>
 
     <title>MyFinder</title>
+    <style>
+          .card-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        </style>
 </head>
 <body>
     <!-- Nome do site-->
@@ -101,7 +108,7 @@ include('conexao.php');
               </div>
               <div class="card-body">
                 <p class="card-text"><?php echo $dados['descricao']?></p>
-                <a href="<?php echo $dados['link']?>" class="btn btn-primary" target="_blank">Visitar</a>
+                <a href="<?php echo $dados['link']?>" class="btn btn-dark" target="_blank">Visitar</a>
       
               
                 
@@ -110,8 +117,8 @@ include('conexao.php');
                     //echo"oi".$id_produtos2;
                   ?>
                   
-                  <button class="btn btn-Lg btn-dark btn-block" type="submit" name="botaoId">Veja Mais</button>
-                  <input type="text" class="form-control" name="id_produtos" value="<?php echo $id_produtos2 ?>">
+                  <button class="btn btn-dark" type="submit" name="botaoId">Veja Mais</button>
+                  <input type="text" class="form-control" name="id_produtos" value="<?php echo $id_produtos2 ?>" hidden>
           
                 
 
@@ -120,13 +127,7 @@ include('conexao.php');
             
         </td>
         </form>
-        <style>
-          .card-text {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-          }
-        </style>
+       
       
         <?php 
         if($cont == 6){
