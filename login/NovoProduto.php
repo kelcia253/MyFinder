@@ -5,7 +5,8 @@ include("conexao.php");
 
 $nome = mysqli_real_escape_string($conexao,trim($_POST['nome']));
 $descricao = mysqli_real_escape_string($conexao,trim($_POST['descricao']));
-$link = mysqli_real_escape_string($conexao,trim($_POST['link']));   
+$link = mysqli_real_escape_string($conexao,trim($_POST['link'])); 
+$imagem = mysqli_real_escape_string($conexao,trim($_POST['imagem']));     
 
 $sql = "SELECT COUNT(*) AS total FROM produtos WHERE nome = '".$nome."'";
 $result = mysqli_query($conexao, $sql);
@@ -20,7 +21,7 @@ if($row['total'] == 1){
     exit;
 }
 
-$sql = "INSERT INTO produtos (nome, descricao, link) VALUES ('$nome', '$descricao', '$link')";
+$sql = "INSERT INTO produtos (nome, descricao, link, imagem) VALUES ('$nome', '$descricao', '$link', '$imagem')";
 echo ($sql);
 
 $result = mysqli_query($conexao, $sql);

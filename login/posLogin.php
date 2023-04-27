@@ -176,6 +176,7 @@ include('conexao.php');
           <br>
           <div class="card-body">
             <p class="card-text"><?php echo $dados['descricao']?></p>
+          
             
             <form action="VejaMais.php" method="POST">
             <?php

@@ -24,6 +24,11 @@
         <label for="inputPassword" class="sr-only"></label>
         <input type="text" name="link" id="inputLink" class="form-control" placeholder="Link..." required>
         <label for="inputLink" class="sr-only"></label>
+        <form method="POST" action="processar_upload.php" enctype="multipart/form-data">
+  <label for="imagem">Selecione uma imagem:</label> <br>
+  <input type="file" id="imagem" name="imagem">
+  
+</form>
         <div id="botaoNovo">
     <button class="btn btn-Lg btn-dark btn-block" type="submit">Adicionar</button>
     <button class="btn btn-Lg btn-dark btn-block" type="reset">Limpar</button>

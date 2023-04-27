@@ -100,6 +100,7 @@ if(isset($_POST['botaoId'])){
               </div>
               <div class="card-body">
                 <p class="card-text"><?php echo $dados['descricao']?></p>
+                <p class="card-text"><?php echo $dados['imagem']?></p>
                 <a href="<?php echo $dados['link']?>" class="btn btn-Lg btn-dark btn-block" target="_blank">Visitar</a>
       
               
