@@ -74,8 +74,7 @@ if(isset($_POST['botaoId'])){
       <!--Cards-->
 </br>
 <button class="btn btn-primary" type="button"  onclick="window.location.href = '../login/NovoProduto.php'">Adicionar Produto</button> 
-<a class="btn btn-primary disabled" role="button" aria-disabled="true"  onclick="window.location.href = '../login/EditarProduto.php'">Editar produto</a>
-<a class="btn btn-secondary disabled" role="button" aria-disabled="true" onclick="window.location.href = '../login/RemoverProduto.php'">Remover produto</a>
+
 <br>
 <br>
 

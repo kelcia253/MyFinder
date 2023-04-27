@@ -53,7 +53,7 @@ if(isset($_POST['botaoId'])){
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bootstrap Site</title>
+  <title>Veja Mais</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
@@ -66,13 +66,13 @@ if(isset($_POST['botaoId'])){
 <?php echo "<h5>Descrição: </h5>" . $descricao . "<br>";?>
 <h5>Preço: </h5>
            <a href="<?php echo "". $link . "";?>" class="btn btn-Lg btn-dark btn-block" target="_blank">Visitar</a>
-           <?php
-                    $id_produtos2 = $dados['id_produtos'];
-                    //echo"oi".$id_produtos2;
-                  ?>
+           <br>
+         
                   
-                  <button class="btn btn-dark" type="submit" name="botaosId">Remover Produto</button>
-                  <input type="text" class="form-control" name="id_produtos" value="<?php echo $id_produtos2 ?>" hidden>
+               
+                  <input type="text" class="form-control" name="id_produtos" value="<?php echo "" . $id . "" ?>" hidden>
+                  <button class="btn btn-Lg btn-dark btn-block" type="submit" name="botaoId">Remover Produto</button>
+                  <button class="btn btn-Lg btn-dark btn-block" type="submit" name="botaoId">Editar Produto</button>
           
           
 </div>

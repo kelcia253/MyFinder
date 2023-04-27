@@ -61,7 +61,7 @@ include('conexao.php');
                 </ul>
 
                 <!--Navegção-->
-                <div class="box-search">
+                
                 <form class="d-flex" role="search" method="POST">
                   <input class="form-control me-2"  type="search" placeholder="Pesquisar..." name="pesquisar" id="pesquisar" aria-label="Search">
                   <button oncclick="searchData()" class="btn btn-outline-dark" type="submit">Pesquisar</button>
@@ -69,7 +69,7 @@ include('conexao.php');
                 
               </div>
               </div>
-            </div>
+       
           </nav>
 
          
@@ -163,7 +163,11 @@ include('conexao.php');
               while($dados = $sql_query->fetch_assoc()){
                 ?>
                 <tr>
-                <div class="card" style="width: 18rem;">
+                <style>
+                  .card{
+                  width: 18rem;
+                  }
+                </style>
                 <br>
         <div class="card text-center" class="card">
           <div class="card-header" name="titulo" id="titulo" method="POST">
@@ -172,7 +176,17 @@ include('conexao.php');
           <br>
           <div class="card-body">
             <p class="card-text"><?php echo $dados['descricao']?></p>
-            <a href="<?php echo $dados['link']?>" class="btn btn-primary" target="_blank">Visitar</a>
+            
+            <form action="VejaMais.php" method="POST">
+            <?php
+                    $id_produtos2 = $dados['id_produtos'];
+                    //echo"oi".$id_produtos2;
+                  ?>
+                  <a href="<?php echo $dados['link']?>" class="btn btn-Lg btn-dark btn-block" target="_blank">Visitar</a>
+                  <input type="text" class="form-control" name="id_produtos" value="<?php echo $id_produtos2 ?>" hidden>
+                  <button class="btn btn-Lg btn-dark btn-block" type="submit" name="botaoId">Veja Mais</button>
+                </form>
+            
           </div>
               </br>
               </br>
