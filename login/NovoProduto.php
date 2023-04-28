@@ -6,7 +6,7 @@ include("conexao.php");
 $nome = mysqli_real_escape_string($conexao,trim($_POST['nome']));
 $descricao = mysqli_real_escape_string($conexao,trim($_POST['descricao']));
 $link = mysqli_real_escape_string($conexao,trim($_POST['link'])); 
-$imagem = mysqli_real_escape_string($conexao,trim($_POST['imagem']));     
+$imagem = date("Ymd").date("His").mysqli_real_escape_string($conexao,trim($_POST['imagem']));     
 
 $sql = "SELECT COUNT(*) AS total FROM produtos WHERE nome = '".$nome."'";
 $result = mysqli_query($conexao, $sql);
@@ -31,7 +31,11 @@ $result = mysqli_query($conexao, $sql);
 //}
 
 
+
 echo("sql: ".$sql);
 header("Location: MeusProdutos.php");
+
+
+
 
 ?>

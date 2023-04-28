@@ -24,7 +24,8 @@
         <label for="inputPassword" class="sr-only"></label>
         <input type="text" name="link" id="inputLink" class="form-control" placeholder="Link..." required>
         <label for="inputLink" class="sr-only"></label>
-        <form method="POST" action="processar_upload.php" enctype="multipart/form-data">
+
+        <form method="POST" action="NovoProduto.php" enctype="multipart/form-data">
   <label for="imagem">Selecione uma imagem:</label> 
   <input type="File" id="imagem" name="imagem">
   

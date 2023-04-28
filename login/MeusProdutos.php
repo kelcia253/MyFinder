@@ -99,8 +99,10 @@ if(isset($_POST['botaoId'])){
                 <?php echo $dados['nome']?>
               </div>
               <div class="card-body">
+              <img class="card-text" style="width: 250px; height:200px;" src="<?php echo $dados['imagem']; ?>" alt="Imagem do produto">
+
                 <p class="card-text"><?php echo $dados['descricao']?></p>
-                <img class="card-text"><?php echo $dados['imagem']?></img>
+               
                 <a href="<?php echo $dados['link']?>" class="btn btn-Lg btn-dark btn-block" target="_blank">Visitar</a>
       
               
