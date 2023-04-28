@@ -14,7 +14,7 @@
 </head>
  
 <body class="text-center">
-<form class="form-signin" action="NovoProduto.php" method="post">
+<form class="form-signin" action="NovoProduto.php" method="post" >
     <div class="border border-dark p-2 mb-2 border-2 border" id="borda">
         <h1 class="h3 mb-3 font-weight-normal align-self-center">Adicione um novo produto</h1>
         <label for="inputNome" class="sr-only"></label> 
@@ -25,18 +25,46 @@
         <input type="text" name="link" id="inputLink" class="form-control" placeholder="Link..." required>
         <label for="inputLink" class="sr-only"></label>
 
-        <form method="POST" action="NovoProduto.php" enctype="multipart/form-data">
-  <label for="imagem">Selecione uma imagem:</label> 
-  <input type="File" id="imagem" name="imagem">
+
+        
+      
+ 
   
-</form>
+
         <div id="botaoNovo">
-    <button class="btn btn-Lg btn-dark btn-block" type="submit">Adicionar</button>
+    <button class="btn btn-Lg btn-dark btn-block" type="submit" >Adicionar</button>
     <button class="btn btn-Lg btn-dark btn-block" type="reset">Limpar</button>
     </div>
     <p class="mt-5 mb-3 text-muted">Desde 2023</p>
     </form>   
+    <?php
+       //include("conexao.php");
+
+        if(isset($_POST['acao'])){
+            $arquivo = $_FILES['file'];
+            $arquivoNovo = explode('.', $arquivo['name']);
+            if($arquivoNovo[sizeof($arquivoNovo)-1] !='jpg'){
+                die('Este tipo de arquivo não pode fazer upload');
+
+            }else{
+                echo "Upload ok!";
+                move_uploaded_file($arquivo['tmp_name'], 'imagensProduto/' .date("Ymd").date("His").$arquivo['name']);
+            }
+        }
+        
+        
+        
+        
+        ?>
+
+    <form action="" method="post" enctype="multipart/form-data">
+    <label for="imagem">Selecione uma imagem:</label> 
+  <input type="file"  name="file">
+  <input type="submit" name="acao" value="enviar">
+
+    </form>
     </div>
+   
     
 </body>
  
