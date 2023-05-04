@@ -28,6 +28,7 @@ if(isset($_POST['botaoId'])){
           $nome = $row['nome'];
          $descricao = $row['descricao'];
          $link = $row['link'];
+         $imagem = $row['imagem'];
        
   
           // Realizar qualquer ação necessária com os valores obtidos
@@ -61,19 +62,32 @@ if(isset($_POST['botaoId'])){
 
 </head>
 <body>
+
+  
 <h1><?php echo " " . $nome . "<br>";?></h1>
 <hr>
+<div class="veja">
+<img class="imgVeja" src="<?php echo $imagem; ?>" alt="Imagem do produto">
+<h5>Preço: </h5> 
+<br>
 <?php echo "<h5>Descrição: </h5>" . $descricao . "<br>";?>
-<h5>Preço: </h5>
-           <a href="<?php echo "". $link . "";?>" class="btn btn-Lg btn-dark btn-block" target="_blank">Visitar</a>
-           <br>
-         
-                  
-               
-                  <input type="text" class="form-control" name="id_produtos" value="<?php echo "" . $id . "" ?>" hidden>
-                  <button class="btn btn-Lg btn-dark btn-block" type="submit" name="botaoId">Remover Produto</button>
-                  <button class="btn btn-Lg btn-dark btn-block" type="submit" name="botaoId">Editar Produto</button>
+<br>
+<div class="botao1" >
+      <a href="<?php echo "". $link . "";?>" class="btn btn-Lg btn-dark btn-block" target="_blank">Visitar</a>
+         <br>
+         </div>
+         <div class="botao2">
+       <input type="text" class="form-control" name="id_produtos" value="<?php echo "" . $id . "" ?>" hidden>
+     <button class="btn btn-Lg btn-dark btn-block" type="submit" name="edita">Editar Produto</button>
+     </div>
+     <div class="botao3">
+       <button class="btn btn-Lg btn-dark btn-block" type="submit" name="remove">Remover Produto</button>
+       </div>         
           
+</div>
+
+
+
           
 </div>
 </body>

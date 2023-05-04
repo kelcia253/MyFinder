@@ -68,6 +68,7 @@
     <button class="btn btn-Lg btn-dark btn-block" type="submit">Enviar</button>
     <button class="btn btn-Lg btn-dark btn-block" type="reset">Limpar</button>
     </div>
+    
     <h8>Não tem cadastro? <a href="../login/cadastro.php">Clique aqui!</a></h8>
     <p class="mt-5 mb-3 text-muted">Desde 2023</p>
     </form>   

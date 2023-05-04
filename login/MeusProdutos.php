@@ -73,8 +73,9 @@ if(isset($_POST['botaoId'])){
 
       <!--Cards-->
 </br>
-<button class="btn btn-primary" type="button"  onclick="window.location.href = '../login/NovoProduto.php'">Adicionar Produto</button> 
-
+<form action="NovoProduto.php" method="POST">
+  <button class="btn btn-primary" name="btnAddProduto" type="button"  onclick="window.location.href = '../login/NovoProduto.php'">Adicionar Produto</button> 
+</form>
 <br>
 <br>
 

@@ -6,7 +6,8 @@ include("conexao.php");
 $nome = mysqli_real_escape_string($conexao,trim($_POST['nome']));
 $descricao = mysqli_real_escape_string($conexao,trim($_POST['descricao']));
 $link = mysqli_real_escape_string($conexao,trim($_POST['link'])); 
-$imagem = date("Ymd").date("His").mysqli_real_escape_string($conexao,trim($_POST['imagem']));   
+// $imagem = date("Ymd").date("His").mysqli_real_escape_string($conexao,trim($_POST['imagem'])); 
+$imagem = ""; 
 
 
 //include("conexao.php");
@@ -19,41 +20,33 @@ $imagem = date("Ymd").date("His").mysqli_real_escape_string($conexao,trim($_POST
 
      }else{
          echo "Upload ok!";
-         move_uploaded_file($arquivo['tmp_name'], 'imagensProduto/' .date("Ymd").date("His").$arquivo['name']);
+         $imagem = 'imagensProduto/' .date("Ymd").date("His").$arquivo['name'];
+         move_uploaded_file($arquivo['tmp_name'], $imagem);
      }
  }
  
  
- 
- 
+//if(isset($_POST['btnAddProduto'])) {
+    $sql = "SELECT COUNT(*) AS total FROM produtos WHERE nome = '".$nome."'";
+    $result = mysqli_query($conexao, $sql);
+    $row = mysqli_fetch_assoc($result);
 
 
-$sql = "SELECT COUNT(*) AS total FROM produtos WHERE nome = '".$nome."'";
-$result = mysqli_query($conexao, $sql);
-$row = mysqli_fetch_assoc($result);
-echo($sql);
+    if($row['total'] == 1 || $nome == ""){
+        $_SESSION['produtos_existe'] = true;
+        echo "produto ja existe";
+        header('Location: TelaNovoProduto.php');
+        exit;
+    }
 
-if($row['total'] == 1){
-    $_SESSION['produtos_existe'] = true;
-     
+    $sql = "INSERT INTO produtos (nome, descricao, link, imagem) VALUES ('$nome', '$descricao', '$link', '$imagem')";
+    $result = mysqli_query($conexao, $sql);
 
-    header('Location: TelaNovoProduto.php');
-    exit;
-}
-
-$sql = "INSERT INTO produtos (nome, descricao, link, imagem) VALUES ('$nome', '$descricao', '$link', '$imagem')";
-echo ($sql);
-
-$result = mysqli_query($conexao, $sql);
-//$row = mysqli_fetch_assoc($result);
-//if($conexao->query($sql) === TRUE){
-//    $_SESSION['status_cadastro'] = true;
+    header("Location: MeusProdutos.php");
 //}
 
 
 
-echo("sql: ".$sql);
-header("Location: MeusProdutos.php");
 
 
 

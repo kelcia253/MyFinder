@@ -26,7 +26,7 @@
         <label for="inputLink" class="sr-only"></label>
         <label for="imagem">Selecione uma imagem:</label> 
   <input type="file"  name="file">
-  <input type="submit" name="acao" value="enviar">
+
 
 
         
@@ -35,7 +35,7 @@
   
 
         <div id="botaoNovo">
-    <button class="btn btn-Lg btn-dark btn-block" type="submit" name="acao">Adicionar</button>
+    <button class="btn btn-Lg btn-dark btn-block" type="submit" name="acao" value="enviar">Adicionar</button>
     <button class="btn btn-Lg btn-dark btn-block" type="reset">Limpar</button>
     </div>
     <p class="mt-5 mb-3 text-muted">Desde 2023</p>

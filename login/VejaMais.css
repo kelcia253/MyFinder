@@ -1,3 +1,17 @@
 h1{
     text-align: center;
 }
+.imgVeja{
+    width: 700px;
+    height: 550px;
+   
+
+}
+.veja{
+    margin: 20px;
+    width: flex;
+     height: 580px;
+     border: 1px solid black;
+     display: flex; /* define o elemento pai como um contêiner flexível */
+     align-items: right; /* alinha verticalmente os itens no centro */
+}

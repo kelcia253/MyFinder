@@ -5,6 +5,11 @@ include('conexao.php');
 
 
 
+
+
+
+
+
 ?>
 
 
@@ -74,6 +79,10 @@ include('conexao.php');
 
          
           <!--Fim do menu-->
+     
+
+          
+       
 
 
         <!--Imagem de ofertas e promoções-->    
@@ -107,6 +116,7 @@ include('conexao.php');
                 <?php echo $dados['nome']?>
               </div>
               <div class="card-body">
+              <img class="card-text" style="width: 250px; height:200px;" src="<?php echo $dados['imagem']; ?>" alt="Imagem do produto">
                 <p class="card-text"><?php echo $dados['descricao']?></p>
                 <a href="<?php echo $dados['link']?>" class="btn btn-dark" target="_blank">Visitar</a>
       
