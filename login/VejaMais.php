@@ -62,28 +62,32 @@ if(isset($_POST['botaoId'])){
 
 </head>
 <body>
-
-  
 <h1><?php echo " " . $nome . "<br>";?></h1>
 <hr>
+
+  
 <div class="veja">
-<img class="imgVeja" src="<?php echo $imagem; ?>" alt="Imagem do produto">
-<h5>Preço: </h5> 
-<br>
-<?php echo "<h5>Descrição: </h5>" . $descricao . "<br>";?>
-<br>
-<div class="botao1" >
-      <a href="<?php echo "". $link . "";?>" class="btn btn-Lg btn-dark btn-block" target="_blank">Visitar</a>
-         <br>
-         </div>
-         <div class="botao2">
-       <input type="text" class="form-control" name="id_produtos" value="<?php echo "" . $id . "" ?>" hidden>
-     <button class="btn btn-Lg btn-dark btn-block" type="submit" name="edita">Editar Produto</button>
-     </div>
-     <div class="botao3">
-       <button class="btn btn-Lg btn-dark btn-block" type="submit" name="remove">Remover Produto</button>
-       </div>         
-          
+  <div class="img">
+  <img class="imgVeja" src="<?php echo $imagem; ?>" alt="Imagem do produto">
+  </div>
+  <div class="info-produto">
+    <h5>Preço: </h5> 
+    <p>oi</p>
+    <h5>Descrição: </h5>
+    <p><?php echo $descricao; ?></p>
+  
+  <div class="botoes-produto">
+    <div class="flex-item">
+      <a href="<?php echo $link; ?>" class="btn btn-lg btn-dark btn-block" target="_blank">Visitar</a>
+    </div>
+    <div class="flex-item">
+      <button class="btn btn-lg btn-dark btn-block" type="submit" name="edita">Editar Produto</button>
+    </div>
+    <div class="flex-item">
+      <button class="btn btn-lg btn-dark btn-block" type="submit" name="remove">Remover Produto</button>
+    </div>
+  </div>
+  </div>
 </div>
 
 
