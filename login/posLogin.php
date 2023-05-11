@@ -60,7 +60,7 @@ include('conexao.php');
                   </li>
                   
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../Configuraçoes/configuracoes.html">Configurações</a>
+                    <a class="nav-link active" aria-current="page" href="../Configuraçoes/configuracoes.php">Configurações</a>
                   </li>
                  
                 </ul>
@@ -110,6 +110,11 @@ include('conexao.php');
         ?>
         <form action="VejaMais.php" method="POST">
         <td>
+        <style>
+                  .card{
+                  width: 18rem;
+                  }
+                </style>
         
             <div class="card text-center">
               <div class="card-header" name="titulo" id="titulo" method="POST">
@@ -129,6 +134,14 @@ include('conexao.php');
                   
                   <button class="btn btn-dark" type="submit" name="botaoId">Veja Mais</button>
                   <input type="text" class="form-control" name="id_produtos" value="<?php echo $id_produtos2 ?>" hidden>
+                  <style>
+          .card-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        </style>
+
           
                 
 
@@ -149,8 +162,7 @@ include('conexao.php');
         }
       } 
       ?>
-      
-
+     
 
  
   
@@ -185,6 +197,7 @@ include('conexao.php');
           </div>
           <br>
           <div class="card-body">
+          <img class="card-text" style="width: 250px; height:200px;" src="<?php echo $dados['imagem']; ?>" alt="Imagem do produto">
             <p class="card-text"><?php echo $dados['descricao']?></p>
           
             

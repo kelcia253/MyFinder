@@ -57,7 +57,7 @@ if(isset($_POST['botaoId'])){
               </li>
             
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../Configuraçoes/configuracoes.html">Configurações</a>
+                <a class="nav-link active" aria-current="page" href="../Configuraçoes/configuracoes.php">Configurações</a>
               </li>
              
             </ul>

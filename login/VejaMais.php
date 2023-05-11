@@ -88,12 +88,40 @@ if(isset($_POST['botaoId'])){
     </div>
   </div>
   </div>
+</div>      
 </div>
 
+<?php
+// inclui o arquivo da biblioteca
+include_once('./simpleDOM/simplehtmldom_1_9_1/simple_html_dom.php');
+
+// carrega o conteúdo HTML do site que deseja extrair informações
+$html = file_get_html('https://www.amazon.com.br/Rel%C3%B3gio-Inteligente-Bluetooth-Smartwatch-150mAh/dp/B08WJQDHJK/ref=asc_df_B08WJQDHJK/?tag=googleshopp00-20&linkCode=df0&hvadid=392858094682&hvpos=&hvnetw=g&hvrand=18242103587685288175&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9102365&hvtargid=pla-1223199269478&psc=1');
+
+// busca o elemento que contém o preço do produto
+$preco_elemento = $html->find('.a-price-whole', 0);
+
+// extrai o preço do produto do elemento encontrado
+$preco = $preco_elemento->plaintext;
+
+// exibe o preço na tela
+echo "O preço do produto é: " . $preco;
+
+// libera a memória utilizada pela biblioteca
+$html->clear();
+unset($html);
 
 
-          
-</div>
+?>
+
+
+
+
+
+
+
+
+
 </body>
 </html>
 
