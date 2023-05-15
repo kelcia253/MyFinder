@@ -34,3 +34,4 @@ echo("sql: ".$sql);
 header("Location: posLogin.php");
 
 ?>
+
