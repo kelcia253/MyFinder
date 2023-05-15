@@ -15,7 +15,7 @@ CREATE TABLE produtos(
 	nome VARCHAR(100) NOT NULL,
 	descricao VARCHAR(500) NOT NULL,
 	link VARCHAR(500) NOT NULL,
-	imagem BLOB(250),
+	imagem VARCHAR(250),
 	PRIMARY KEY (id_produtos));
 	fk_cliente INT 
 
