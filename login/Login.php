@@ -18,7 +18,7 @@
         $sql_code = "SELECT * FROM cliente WHERE email = '$email' AND senha = '$senha'";
         $sql_query = $conexao->query($sql_code) or die("Falha na execução do banco de dados" . $conexao->error);
         
-        echo($sql_code);
+        //echo($sql_code);
         $quantidade = $sql_query->num_rows;
 
         if($quantidade == 1){
@@ -34,8 +34,22 @@
            header("Location: posLogin.php");
 
 
-        }else{
-            echo "Falha ao logar! Email ou senha incorretos";
+        }else{?>
+        <style>
+            .alert{
+                align:center;
+                margin-top: -500px;
+                position: absolute;
+                left:40%;
+                margin-right: -20%;
+            }
+
+        </style>
+
+        <div class="alert alert-danger"><p><?php  echo "Falha ao logar! Email ou senha incorretos";?></p></div>
+
+        <?php
+           
         }
     }
 
