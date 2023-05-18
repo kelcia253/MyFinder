@@ -12,220 +12,88 @@ include('conexao.php');
 
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' type='text/css' media='screen' href='../PosLogin/PosLogin.css'>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>MyFinder</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='posLogin.css'>
    <link rel = 'stylesheet' type = 'text/css' media='screen' href='../css/bootstrap.min.css'>
    <script src='../js/bootstrap.bundle.min.js'></script>
 
-    <title>MyFinder</title>
-    <style>
-          .card-text {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-          }
-        </style>
+
+    <script src='main.js'></script>
 </head>
 <body>
-    <!-- Nome do site-->
-    <nav class="navbar bg-body-tertiary">
+  <!-- Nome do site-->
+  
+    <nav class="navbar bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             MyFinder
           </a>
-          
-          
-          <button class="btn btn-outline-dark" id="btnCadastro" onclick="window.location.href = '../login/logout.php'">Logout</button>
+          <div class="btnPrincipal">
+          <button class="glow-on-hover"  id="btnLogin" onclick="window.location.href = '../login/Login.php'" style=" float: rigth">Logout</button>
+        
+        </div>
         </div>
       </nav>
       <!--fim do nome do site-->
 
-      <!--MENU de navegação-->
-          <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <!--MENU de notificação-->
+          <nav class="navbar navbar-expand-lg bg-dark">
             <div class="container-fluid">
-              <a class="navbar-brand" href="../login/posLogin.php">Principal</a>
+              <a class="navbar-brand" href="../TelaInicial/TelaInicial.html">Principal</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="MeusProdutos.php">Meus Produtos</a>
+                    <a class="nav-link active meu-produto" aria-current="page" href="../login/MeusProdutos.php">Meus Produtos</a>
                   </li>
-                  
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../Configuraçoes/configuracoes.php">Configurações</a>
+                    <a class="nav-link active configuracoes" aria-current="page" href="../Configuraçoes/configuracoes.php">Configurações</a>
                   </li>
                  
                 </ul>
 
-                <!--Navegção-->
+               
+
+
+              </div>
+            </div>
+          </nav>
+          <div class="bg-dark" style="height: 300px">
+            <section id = "oferta">
+              <div class="box-search bg-dark">
+                <form class="d-flex justify-content-center" role="search" method="POST">
+
                 
-                <form class="d-flex" role="search" method="POST">
-                  <input class="form-control me-2"  type="search" placeholder="Pesquisar..." name="pesquisar" id="pesquisar" aria-label="Search">
-                  <button oncclick="searchData()" class="btn btn-outline-dark" type="submit">Pesquisar</button>
+                  <input  class="form-control me-2 pesquisa"  type="search" placeholder="Pesquisar..." name="pesquisar" id="pesquisar" aria-label="Search">
+                  <button  onclick="searchData()" class="btn btn-outline-light botao" type="submit">Pesquisar</button>
+              
                 </form>
                 
               </div>
-              </div>
-       
-          </nav>
-
-         
-          <!--Fim do menu-->
-     
-
+          </section>
+          </div>
           
-       
+          
+          <!--Fim do menu-->
 
 
-        <!--Imagem de ofertas e promoções-->    
+        <!--Imagem de ofertas e promoções    
         <section id = "oferta">
             <div id = "ofertas">
                 <img src="../imagens/ofertas.png" allign = "middle"/>
               </div>
         </section>
-        <!--Fim da imagem-->
-        <?php
-          if(!isset($_POST['pesquisar'])){
-            ?>
-          <table>
- <tr>
-
-<?php
-      //$pesquisa = mysqli_real_escape_string ($conexao,trim($_POST['titulo']));
-      $sql_code = "SELECT * FROM produtos";
-      $sql_query = $conexao->query($sql_code) or die("Falha na execução do banco de dados" . $conexao->error);
-      
-      $cont = 0;
-      
-      while($dados = $sql_query->fetch_assoc()){
-        $cont++;
-        ?>
-        <form action="VejaMais.php" method="POST">
-        <td>
-        <style>
-                  .card{
-                  width: 18rem;
-                  }
-                </style>
-        
-            <div class="card text-center">
-              <div class="card-header" name="titulo" id="titulo" method="POST">
-                <?php echo $dados['nome']?>
-              </div>
-              <div class="card-body">
-              <img class="card-text" style="width: 250px; height:200px;" src="<?php echo $dados['imagem']; ?>" alt="Imagem do produto">
-                <p class="card-text"><?php echo $dados['descricao']?></p>
-                <a href="<?php echo $dados['link']?>" class="btn btn-dark" target="_blank">Visitar</a>
-      
-              
-                
-                  <?php
-                    $id_produtos2 = $dados['id_produtos'];
-                    //echo"oi".$id_produtos2;
-                  ?>
-                  
-                  <button class="btn btn-dark" type="submit" name="botaoId">Veja Mais</button>
-                  <input type="text" class="form-control" name="id_produtos" value="<?php echo $id_produtos2 ?>" hidden>
-                  <style>
-          .card-text {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-          }
-        </style>
-
-          
-                
-
-              </div>
-            </div>
-            
-        </td>
-        </form>
-       
-      
-        <?php 
-        if($cont == 6){
-          $cont = 0;
-          ?>
-          </tr>
-          <tr>
-          <?php 
-        }
-      } 
-      ?>
-     
-
- 
-  
-      </table>
-            <?php 
-          } else{
-
-            $pesquisa = mysqli_real_escape_string ($conexao,trim($_POST['pesquisar']));
-            $sql_code = "SELECT * FROM produtos WHERE nome LIKE '%$pesquisa%' OR descricao LIKE '%$pesquisa%' OR link LIKE '%$pesquisa%'";
-
-           $sql_query = $conexao->query($sql_code) or die("Falha na execução do banco de dados" . $conexao->error);
-
-            if($sql_query->num_rows == 0){
-          ?>
-           <tr>
-              <td colspan="3">Nenhum resultado encontrado...</td>
-            </tr>
-            <?php }
-            else{
-              while($dados = $sql_query->fetch_assoc()){
-                ?>
-                <tr>
-                <style>
-                  .card{
-                  width: 18rem;
-                  }
-                </style>
-                <br>
-        <div class="card text-center" class="card">
-          <div class="card-header" name="titulo" id="titulo" method="POST">
-          <?php echo $dados['nome']?>
-          </div>
-          <br>
-          <div class="card-body">
-          <img class="card-text" style="width: 250px; height:200px;" src="<?php echo $dados['imagem']; ?>" alt="Imagem do produto">
-            <p class="card-text"><?php echo $dados['descricao']?></p>
-          
-            
-            <form action="VejaMais.php" method="POST">
-            <?php
-                    $id_produtos2 = $dados['id_produtos'];
-                    //echo"oi".$id_produtos2;
-                  ?>
-                  <a href="<?php echo $dados['link']?>" class="btn btn-Lg btn-dark btn-block" target="_blank">Visitar</a>
-                  <input type="text" class="form-control" name="id_produtos" value="<?php echo $id_produtos2 ?>" hidden>
-                  <button class="btn btn-Lg btn-dark btn-block" type="submit" name="botaoId">Veja Mais</button>
-                </form>
-            
-          </div>
-              </br>
-              </br>
-        </div>
-        
-                </tr>
-                <?php
-              }
-            }
-            ?>
-          
-          <?php } ?>
+        Fim da imagem-->
 
 
-   
 </body>
 
 </html>
