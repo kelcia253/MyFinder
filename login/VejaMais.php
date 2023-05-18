@@ -1,7 +1,9 @@
 
-
-
 <?php
+
+session_start();
+include("conexao.php");
+
 if(isset($_POST['botaoId'])){
     $id_produtos = $_POST['id_produtos'];
   
@@ -75,7 +77,7 @@ foreach($linkTags as $linkT){
  
   if(strpos($linkT ->getAttribute('class'),'a-price')===0){
     $linkList .= $linkT->textContent .= "\n";
-  $precoFinal = $linkT->textContent; 
+    $precoFinal = $linkT->textContent; 
   break;
 }
 }
