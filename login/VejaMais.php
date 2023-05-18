@@ -31,15 +31,12 @@ if(isset($_POST['botaoId'])){
           // Acessar os valores retornados do banco de dados
           $id = $row['id_produtos'];
           $nome = $row['nome'];
-         $descricao = $row['descricao'];
-         $link = $row['link'];
-         $imagem = $row['imagem'];
+          $descricao = $row['descricao'];
+          $link = $row['link'];
+          $imagem = $row['imagem'];
        
-  
           // Realizar qualquer ação necessária com os valores obtidos
-
-        
-       
+          
         }
       } else {
         echo "Nenhum registro encontrado.";
@@ -47,9 +44,11 @@ if(isset($_POST['botaoId'])){
     } else {
       echo "Erro na execução da consulta: " . mysqli_error($conexao);
     }
+
+    
   
     // Fechar a conexão com o banco de dados
-    mysqli_close($conexao);
+    //mysqli_close($conexao);
   }
   ?>
 
@@ -64,22 +63,26 @@ $html = file_get_contents($link);
 libxml_use_internal_errors(true);
 
 $domDocument = new DOMDocument();
-$domDocument ->loadHTML($html);
+$domDocument->loadHTML($html);
 
 //eu epgo uma lista com várias tags desta
-$linkTags = $domDocument ->getElementsByTagName("span");
+$linkTags = $domDocument->getElementsByTagName("span");
 
 $linkList ='';
 
 //o link recebe cada uma das entradas deste link ali
 $precoFinal = '';
+
 foreach($linkTags as $linkT){
- 
-  if(strpos($linkT ->getAttribute('class'),'a-price')===0){
-    $linkList .= $linkT->textContent .= "\n";
+ echo "a";
+  if(strpos($linkT->getAttribute('class'), 'a-price-whole') === 0){
+    //echo ">>>>" . $linkT->textContent;
+    echo "b";
+    
+    //$linkList .= $linkT->textContent . "\n";
     $precoFinal = $linkT->textContent; 
-  break;
-}
+    break;
+  }
 }
 
 //file_put_contents("lista_de_precos.txt",$linkList); //eu crio uma lista com todos os links
@@ -108,7 +111,7 @@ foreach($linkTags as $linkT){
   </div>
   <div class="info-produto">
     <h5>Preço: </h5> 
-    <p><?php  echo $precoFinal ?></p>
+    <p><?php  echo $precoFinal . "dddd" ?></p>
     <h5>Descrição: </h5>
     <p><?php echo $descricao; ?></p>
   
@@ -126,16 +129,6 @@ foreach($linkTags as $linkT){
   </div>
 </div>      
 </div>
-
-
-
-
-
-
-
-
-
-
 
 </body>
 </html>
