@@ -3,13 +3,6 @@
 include('protect.php');
 include('conexao.php');
 
-
-
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -151,6 +144,7 @@ include('conexao.php');
             ?>
 
           <?php } ?>
+          
 
           
           
