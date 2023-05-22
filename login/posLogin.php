@@ -81,6 +81,77 @@ include('conexao.php');
           </section>
           </div>
           <h1>MyFinder -----------------------------------------------------------------------------------------------------------</h1>
+          <br>
+          <?php
+          if(!isset($_POST['pesquisar'])){
+            ?>
+            <tr>
+              <td colspan="3"></td>
+            </tr>
+            <?php 
+          } else{
+
+            $pesquisa = mysqli_real_escape_string ($conexao,trim($_POST['pesquisar']));
+            $sql_code = "SELECT * FROM produtos WHERE nome LIKE '%$pesquisa%'";
+
+           $sql_query = $conexao->query($sql_code) or die("Falha na execução do banco de dados" . $conexao->error);
+
+            if($sql_query->num_rows == 0){
+          ?>
+           <tr>
+              <td colspan="3">Nenhum resultado encontrado...</td>
+            </tr>
+            <?php }
+            else{
+              while($dados = $sql_query->fetch_assoc()){
+                ?>
+                <tr>
+                  <td>
+                  <form action="VejaMais.php" method="POST">
+        <td>
+          <div class="card" style="width: 18rem;" name="card">
+            <div class="card text-center">
+              <div class="card-header" name="titulo" id="titulo" method="POST">
+                <?php echo $dados['nome']?>
+              </div>
+              <div class="card-body">
+              <img class="card-text" style="width: 250px; height:200px;" src="<?php echo $dados['imagem']; ?>" alt="Imagem do produto">
+
+                <p class="card-text"><?php echo $dados['descricao']?></p>
+               
+                <a href="<?php echo $dados['link']?>" class="btn btn-Lg btn-dark btn-block" target="_blank">Visitar</a>
+      
+              
+                
+                  <?php
+                    $id_produtos2 = $dados['id_produtos'];
+                    //echo"oi".$id_produtos2;
+                  ?>
+                  <input type="text" class="form-control" name="id_produtos" value="<?php echo $id_produtos2 ?>" hidden>
+                  <button class="btn btn-Lg btn-dark btn-block" type="submit" name="botaoId">Veja Mais</button>
+          
+                
+
+              </div>
+            </div>
+          </div>     
+        </td>
+        </form>
+        <style>
+          .card-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        </style>
+                </tr>
+                <?php
+              }
+            }
+            ?>
+
+          <?php } ?>
+
           
           
           <!--Fim do menu-->
