@@ -39,10 +39,14 @@ $imagem = "";
         exit;
     }
 
-    $sql = "INSERT INTO produtos (nome, descricao, link, imagem) VALUES ('$nome', '$descricao', '$link', '$imagem')";
-    $result = mysqli_query($conexao, $sql);
+    $fk_cliente = $_SESSION['user'];
+    
 
-    header("Location: MeusProdutos.php");
+    $sql = "INSERT INTO produtos (nome, descricao, link, imagem, fk_cliente) VALUES ('$nome', '$descricao', '$link', '$imagem', '$fk_cliente')";
+    $result = mysqli_query($conexao, $sql);
+    echo $sql;
+
+    //header("Location: MeusProdutos.php");
 //}
 
 

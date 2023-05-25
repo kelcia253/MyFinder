@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('conexao.php');
 
 /*
@@ -12,11 +13,6 @@ if(isset($_POST['botaoId'])){
 
 
 ?>
-
-
-
-
-
 
 
 <!DOCTYPE html>
@@ -86,7 +82,7 @@ if(isset($_POST['botaoId'])){
 
 <?php
       //$pesquisa = mysqli_real_escape_string ($conexao,trim($_POST['titulo']));
-      $sql_code = "SELECT * FROM produtos";
+      $sql_code = "SELECT * FROM produtos WHERE fk_cliente = '".$_SESSION['user']."'";
       $sql_query = $conexao->query($sql_code) or die("Falha na execução do banco de dados" . $conexao->error);
       
       $cont = 0;

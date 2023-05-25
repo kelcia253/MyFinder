@@ -28,8 +28,8 @@
             if(!isset($_SESSION)){
                 session_start();
             }
-            $_SESSION['user'] = $cliente['id'];
-            $_SESSION['name'] = $cliente['nome'];
+            $_SESSION['user'] = $ususario['id_cliente'];
+            $_SESSION['name'] = $ususario['nome'];
 
            header("Location: posLogin.php");
 
