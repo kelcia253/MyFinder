@@ -54,7 +54,7 @@ if(isset($_POST['botaoId'])){
 
 <?php
 
-$html = file_get_contents('https://www.amazon.com.br/PILLOW-ORTOBOM-PERCAL-ALGOD%C3%83O-HIPOAL%C3%89RGICO/dp/B0BLHP1JVT/ref=asc_df_B0BLHP1JVT/?tag=googleshopp00-20&linkCode=df0&hvadid=379799862716&hvpos=&hvnetw=g&hvrand=9620463898655117723&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9102365&hvtargid=pla-1891896554577&th=1');
+$html = file_get_contents($link);
 libxml_use_internal_errors(true);
 $domDocument = new DOMDocument();
 $domDocument->loadHTML($html);
@@ -64,10 +64,17 @@ $linkTags = $domDocument->getElementsByTagName("span");
 
 $linkList = '';
 
+$precoFinal = '';
 
-foreach($linkTags as $link){
-  if(strpos($link->getAttribute('class'),'a-price') ===0){
-    $linkList .= $link->textContent . "\n";
+
+
+
+foreach($linkTags as $linkA){
+  if(strpos($linkA->getAttribute('class'),'a-price') ===0){
+    $linkList .= $linkA->textContent . "\n";
+    $precoFinal = $linkA->textContent;
+    break;
+  
   }
 }
 
