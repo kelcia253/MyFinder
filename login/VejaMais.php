@@ -52,42 +52,30 @@ if(isset($_POST['botaoId'])){
   }
   ?>
 
-
 <?php
-// inclui o arquivo da biblioteca
-include_once('./simpleDOM/simplehtmldom_1_9_1/simple_html_dom.php');
 
-// carrega o conteúdo HTML do site que deseja extrair informações
-$html = file_get_contents($link);
-
-//$html = file_get_contents('https://www.amazon.com.br/Rel%C3%B3gio-Inteligente-Bluetooth-Smartwatch-150mAh/dp/B08WJQDHJK/ref=asc_df_B08WJQDHJK/?tag=googleshopp00-20&linkCode=df0&hvadid=392858094682&hvpos=&hvnetw=g&hvrand=18242103587685288175&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9102365&hvtargid=pla-1223199269478&psc=1');
+$html = file_get_contents('https://www.amazon.com.br/PILLOW-ORTOBOM-PERCAL-ALGOD%C3%83O-HIPOAL%C3%89RGICO/dp/B0BLHP1JVT/ref=asc_df_B0BLHP1JVT/?tag=googleshopp00-20&linkCode=df0&hvadid=379799862716&hvpos=&hvnetw=g&hvrand=9620463898655117723&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9102365&hvtargid=pla-1891896554577&th=1');
 libxml_use_internal_errors(true);
-
 $domDocument = new DOMDocument();
 $domDocument->loadHTML($html);
 
-//eu epgo uma lista com várias tags desta
 $linkTags = $domDocument->getElementsByTagName("span");
 
-$linkList ='';
 
-//o link recebe cada uma das entradas deste link ali
-$precoFinal = '';
+$linkList = '';
 
-foreach($linkTags as $linkT){
- echo "a";
-  if(strpos($linkT->getAttribute('class'), 'a-price-whole') === 0){
-    //echo ">>>>" . $linkT->textContent;
-    echo "b";
-    
-    //$linkList .= $linkT->textContent . "\n";
-    $precoFinal = $linkT->textContent; 
-    break;
+
+foreach($linkTags as $link){
+  if(strpos($link->getAttribute('class'),'a-price') ===0){
+    $linkList .= $link->textContent . "\n";
   }
 }
 
-//file_put_contents("lista_de_precos.txt",$linkList); //eu crio uma lista com todos os links
+file_put_contents("lista_de_titulos.txt", $linkList);
+
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -112,7 +100,7 @@ foreach($linkTags as $linkT){
   </div>
   <div class="info-produto">
     <h5>Preço: </h5> 
-    <p><?php  echo $precoFinal . "dddd" ?></p>
+    <p><?php  echo $linkList . "dddd" ?></p>
     <h5>Descrição: </h5>
     <p><?php echo $descricao; ?></p>
   

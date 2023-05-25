@@ -44,10 +44,10 @@ $imagem = "";
 
     $sql = "INSERT INTO produtos (nome, descricao, link, imagem, fk_cliente) VALUES ('$nome', '$descricao', '$link', '$imagem', '$fk_cliente')";
     $result = mysqli_query($conexao, $sql);
-    echo $sql;
+    
 
-    //header("Location: MeusProdutos.php");
-//}
+    header("Location: MeusProdutos.php");
+
 
 
 
