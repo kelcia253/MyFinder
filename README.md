@@ -31,26 +31,19 @@ Insira os tópicos do README em links para facilitar a navegação do leitor
 
 ## Funcionalidades
 
-:heavy_check_mark: Funcionalidade 1  
-FAzer login
+:heavy_check_mark: Funcionalidade 1  : Fazer Login
 
-:heavy_check_mark: Funcionalidade 2  
+:heavy_check_mark: Funcionalidade 2  : Fazer cadastro
 
-:heavy_check_mark: Funcionalidade 3  
+:heavy_check_mark: Funcionalidade 3  : Adicionar produto
 
-:heavy_check_mark: Funcionalidade 4  
+:heavy_check_mark: Funcionalidade 4  : Monitorar histórico de preço
 
-## Layout ou Deploy da Aplicação :dash:
 
-> Link do deploy da aplicação. Exemplo com netlify: https://certificates-for-everyone-womakerscode.netlify.app/
-
-... 
-
-Se ainda não houver deploy, insira capturas de tela da aplicação ou gifs
 
 ## Pré-requisitos
 
-:warning: [Node](https://nodejs.org/en/download/)
+:warning: [Xampp](https://www.apachefriends.org/pt_br/download.html)
 
 ...
 
@@ -58,23 +51,24 @@ Liste todas as dependencias e libs que o usuário deve ter instalado na máquina
 
 ## Como rodar a aplicação :arrow_forward:
 
-No terminal, clone o projeto: 
+1. Faça o download da pasta do projeto
+2. Extraia os arquivos
+3. Coloque dentro da pasta Xampp/htdocs
+4. Inicialize o servidor APACHE e o MySQL no xampp
+5. Copie o código myfinder.sql
+6. Abra o servidor do xampp e crie um banco de dados chamado "myfinder" e cole o código
+
 
 ```
-git clone https://github.com/React-Bootcamp-WoMarkersCode/certificate-generator
+
 ```
+
 
 ... 
 
 Coloque um passo a passo para rodar a sua aplicação. **Dica: clone o próprio projeto e verfique se o passo a passo funciona**
 
-## Como rodar os testes
 
-Coloque um passo a passo para executar os testes
-
-```
-$ npm test, rspec, etc 
-```
 
 ## Casos de Uso
 
