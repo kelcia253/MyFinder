@@ -3,10 +3,8 @@
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=php&message=linguagem&color=blue&style=for-the-badge&logo=PHP"/>
   <img src="http://img.shields.io/static/v1?label=Google&message=109.0.5414.120&color=red&style=for-the-badge&logo=Google"/>
-  <img src="http://img.shields.io/static/v1?label=Ruby%20On%20Rails%20&message=6.0.2.2&color=red&style=for-the-badge&logo=ruby"/>
-  <img src="http://img.shields.io/static/v1?label=TESTES&message=%3E100&color=GREEN&style=for-the-badge"/>
+  <img src="http://img.shields.io/static/v1?label=TESTES&message=%3E1000&color=GREEN&style=for-the-badge"/>
    <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
-   <img src="http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge"/>
 </p>
 
 > Status do Projeto: :heavy_check_mark: :warning: (concluido, em desenvolvimento, etc)
@@ -16,8 +14,6 @@
 :small_blue_diamond: [Descrição do projeto](#descrição-do-projeto)
 
 :small_blue_diamond: [Funcionalidades](#funcionalidades)
-
-:small_blue_diamond: [Deploy da Aplicação](#deploy-da-aplicação-dash)
 
 :small_blue_diamond: [Pré-requisitos](#pré-requisitos)
 
@@ -36,6 +32,7 @@ Insira os tópicos do README em links para facilitar a navegação do leitor
 ## Funcionalidades
 
 :heavy_check_mark: Funcionalidade 1  
+FAzer login
 
 :heavy_check_mark: Funcionalidade 2  
 
