@@ -109,6 +109,7 @@ include('conexao.php');
               </div>
               <div class="card-body">
               <img class="card-text" style="width: 250px; height:200px;" src="<?php echo $dados['imagem']; ?>" alt="Imagem do produto">
+              <p class="card-text"><?php echo $dados['preco']?></p>
 
                 <p class="card-text"><?php echo $dados['descricao']?></p>
                
@@ -173,6 +174,7 @@ include('conexao.php');
               </div>
               <div class="card-body">
               <img class="card-text" style="width: 250px; height:200px;" src="<?php echo $dados['imagem']; ?>" alt="Imagem do produto">
+              <p class="card-text"><?php echo $dados['preco']?></p>
 
                 <p class="card-text"><?php echo $dados['descricao']?></p>
                
