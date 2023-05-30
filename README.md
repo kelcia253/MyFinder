@@ -94,7 +94,7 @@ Se for o caso, liste tarefas/funcionalidades que ainda precisam ser implementada
 
 Liste o time responsável pelo desenvolvimento do projeto
 
-| [<img src="https://avatars.githubusercontent.com/u/110485657?s=400&u=7c7f5ecfa6bf28927627bdf6901493a2aaa4732e&v=4"width=115><br><sub>Kélcia Kohls</sub>](https://github.com/kelcia253) |  [<img src="https://avatars2.githubusercontent.com/u/46378210?s=400&u=071f7791bb03f8e102d835bdb9c2f0d3d24e8a34&v=4" width=115><br><sub>Noemi Larissa</sub>](https://github.com/Diana-ops) |  
+| [<img src="https://avatars2.githubusercontent.com/u/110485657?s=400&u=7c7f5ecfa6bf28927627bdf6901493a2aaa4732e&v=4"width=115><br><sub>Kélcia Kohls</sub>](https://github.com/kelcia253) |  [<img src="https://avatars2.githubusercontent.com/u/46378210?s=400&u=071f7791bb03f8e102d835bdb9c2f0d3d24e8a34&v=4" width=115><br><sub>Noemi Larissa</sub>](https://github.com/Diana-ops) |  
 | :---: | :---: | 
 
 
