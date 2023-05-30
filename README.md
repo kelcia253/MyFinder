@@ -26,7 +26,8 @@ Insira os tópicos do README em links para facilitar a navegação do leitor
 ## Descrição do projeto 
 
 <p align="justify">
-  Descrição breve do projeto compondo um paragrafo ou dois. 
+ O objetivo deste projeto é desenvolver um monitorador de preços, que mantenha um cadastro dos produtos desejados pelo usuário e os mantenha atualizados e
+ordenados conforme as necessidades do mesmo.
 </p>
 
 ## Funcionalidades
@@ -35,7 +36,7 @@ Insira os tópicos do README em links para facilitar a navegação do leitor
 
 :heavy_check_mark: Funcionalidade 2  : Fazer cadastro
 
-:heavy_check_mark: Funcionalidade 3  : Adicionar produto
+:heavy_check_mark: Funcionalidade 3  : Administrar produtos
 
 :heavy_check_mark: Funcionalidade 4  : Monitorar histórico de preço
 
@@ -45,9 +46,6 @@ Insira os tópicos do README em links para facilitar a navegação do leitor
 
 :warning: [Xampp](https://www.apachefriends.org/pt_br/download.html)
 
-...
-
-Liste todas as dependencias e libs que o usuário deve ter instalado na máquina antes de rodar a aplicação 
 
 ## Como rodar a aplicação :arrow_forward:
 
@@ -59,24 +57,15 @@ Liste todas as dependencias e libs que o usuário deve ter instalado na máquina
 6. Abra o servidor do xampp e crie um banco de dados chamado "myfinder" e cole o código
 
 
-```
-
-```
-
-
-... 
-
-Coloque um passo a passo para rodar a sua aplicação. **Dica: clone o próprio projeto e verfique se o passo a passo funciona**
-
-
-
 ## Casos de Uso
 
-Explique com mais detalhes como a sua aplicação poderia ser utilizada. O uso de **gifs** aqui seria bem interessante. 
+Nome: Admin
+Email: Admin@gmail.com
+Senha: 123 
 
-Exemplo: Caso a sua aplicação tenha alguma funcionalidade de login apresente neste tópico os dados necessários para acessá-la.
 
-## JSON :floppy_disk:
+
+## PHP :floppy_disk:
 
 ### Usuários: 
 
