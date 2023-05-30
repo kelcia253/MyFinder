@@ -53,36 +53,7 @@ if(isset($_POST['botaoId'])){
   }
   ?>
 
-<?php
 
-$html = file_get_contents($link);
-libxml_use_internal_errors(true);
-$domDocument = new DOMDocument();
-$domDocument->loadHTML($html);
-
-$linkTags = $domDocument->getElementsByTagName("span");
-
-
-$linkList = '';
-
-$precoFinal = '';
-
-
-
-
-foreach($linkTags as $linkA){
-  if(strpos($linkA->getAttribute('class'),'a-price') ===0){
-    $linkList .= $linkA->textContent . "\n";
-    $precoFinal = $linkA->textContent;
-    break;
-  
-  }
-}
-
-file_put_contents("lista_de_titulos.txt", $linkList);
-
-
-?>
 
 
 <!DOCTYPE html>
