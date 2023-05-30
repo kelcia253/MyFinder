@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=php&message=linguagem&color=blue&style=for-the-badge&logo=PHP"/>
-  <img src="https://img.shields.io/static/v1?label=bootstrap&message=framework&color=blue&style=for-the-badge&logo=BOOTSTRAP"/>
+  <img src="https://img.shields.io/static/v1?label=bootstrap&message=framework&color=pink&style=for-the-badge&logo=BOOTSTRAP"/>
   <img src="http://img.shields.io/static/v1?label=Google&message=109.0.5414.120&color=red&style=for-the-badge&logo=Google"/>
   <img src="http://img.shields.io/static/v1?label=TESTES&message=%3E1000&color=GREEN&style=for-the-badge"/>
    <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
@@ -70,8 +70,9 @@ ordenados conforme as necessidades do mesmo.
 
 ## Linguagens, dependencias e libs utilizadas :books:
 
-- [HTML](https://pt-br.reactjs.org/docs/create-a-new-react-app.html)
-- [CSS](https://react-pdf.org/)
+- [HTML]
+- [CSS]
+- [PHP]
 
 
 
