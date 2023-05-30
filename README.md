@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=php&message=linguagem&color=blue&style=for-the-badge&logo=PHP"/>
-  <img src="http://img.shields.io/static/v1?label=Google&message=109.0.5414.120 (Versão oficial) 64 bits&color=red&style=for-the-badge&logo=Google"/>
+  <img src="http://img.shields.io/static/v1?label=Google&message=109.0.5414.120&color=red&style=for-the-badge&logo=Google"/>
   <img src="http://img.shields.io/static/v1?label=Ruby%20On%20Rails%20&message=6.0.2.2&color=red&style=for-the-badge&logo=ruby"/>
   <img src="http://img.shields.io/static/v1?label=TESTES&message=%3E100&color=GREEN&style=for-the-badge"/>
    <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
