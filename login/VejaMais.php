@@ -79,7 +79,7 @@ if(isset($_POST['botaoId'])){
   </div>
   <div class="info-produto">
     <h5>Preço: </h5> 
-    <p><?php  echo $linkList . "dddd" ?></p>
+    <p><?php  echo $preco ?></p>
     <h5>Descrição: </h5>
     <p><?php echo $descricao; ?></p>
   
