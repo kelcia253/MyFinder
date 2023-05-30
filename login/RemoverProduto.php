@@ -1,4 +1,5 @@
 <?php
+include "conexão.php";
 if (isset($_POST['botaoId'])) {
     $id_produtos = $_POST['id_produtos'];
 
