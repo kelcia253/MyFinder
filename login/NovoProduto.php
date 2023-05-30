@@ -4,6 +4,7 @@ session_start();
 include("conexao.php");
 
 $nome = mysqli_real_escape_string($conexao,trim($_POST['nome']));
+$preco = mysqli_real_escape_string($conexao,trim($_POST['preco'])); 
 $descricao = mysqli_real_escape_string($conexao,trim($_POST['descricao']));
 $link = mysqli_real_escape_string($conexao,trim($_POST['link'])); 
 // $imagem = date("Ymd").date("His").mysqli_real_escape_string($conexao,trim($_POST['imagem'])); 
@@ -42,7 +43,7 @@ $imagem = "";
     $fk_cliente = $_SESSION['user'];
     
 
-    $sql = "INSERT INTO produtos (nome, descricao, link, imagem, fk_cliente) VALUES ('$nome', '$descricao', '$link', '$imagem', '$fk_cliente')";
+    $sql = "INSERT INTO produtos (nome, preco, descricao, link, imagem, fk_cliente) VALUES ('$nome', '$preco', '$descricao', '$link', '$imagem', '$fk_cliente')";
     $result = mysqli_query($conexao, $sql);
     
 

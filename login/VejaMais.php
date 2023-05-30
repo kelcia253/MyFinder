@@ -31,6 +31,7 @@ if(isset($_POST['botaoId'])){
           // Acessar os valores retornados do banco de dados
           $id = $row['id_produtos'];
           $nome = $row['nome'];
+          $preco  = $row['preco'];
           $descricao = $row['descricao'];
           $link = $row['link'];
           $imagem = $row['imagem'];

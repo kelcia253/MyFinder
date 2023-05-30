@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22-Maio-2023 às 21:53
+-- Tempo de geração: 30-Maio-2023 às 19:02
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 7.4.23
 
@@ -55,7 +55,8 @@ CREATE TABLE `produtos` (
   `descricao` varchar(500) NOT NULL,
   `link` varchar(500) NOT NULL,
   `imagem` varchar(250) DEFAULT NULL,
-  `fk_cliente` int(100) DEFAULT NULL
+  `fk_cliente` int(100) DEFAULT NULL,
+  `preco` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

@@ -63,6 +63,8 @@
         <h1 class="h3 mb-3 font-weight-normal align-self-center">Adicione um novo produto</h1>
         <label for="inputNome" class="sr-only"></label> 
         <input type="text" name="nome" id="inputNome" class="form-control" placeholder="Nome do produto..." required autofocus>
+        <label for="inputPreco" class="sr-only"></label>
+        <input type="text" name="preco" id="inputPreco" class="form-control" placeholder="Digite o preço..." required >
         <label for="inputDescricao" class="sr-only"></label>
         <input type="text" name="descricao" id="inputdescricao" class="form-control" placeholder="Descrição..." required>
         <label for="inputPassword" class="sr-only"></label>
