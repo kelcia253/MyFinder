@@ -92,9 +92,9 @@ Se for o caso, liste tarefas/funcionalidades que ainda precisam ser implementada
 
 ## Desenvolvedores/Contribuintes :octocat:
 
-Liste o time responsável pelo desenvolvimento do projeto
+Time de desenvolvimento:
 
-| [<img src="./imagemGit/kelcialinda.jpg" width=115><br><sub>Kélcia Kohls - full-stack developers</sub>](https://github.com/kelcia253) |  [<img src="./imagemGit/noemi.jpg" width=115><br><sub>Noemi Larissa - Documentação </sub>](https://github.com/Diana-ops) |  
+| [<img src="./imagemGit/kelcialinda.jpg" width=115><br><sub>Kélcia Kohls - full-stack developer</sub>](https://github.com/kelcia253) |  [<img src="./imagemGit/noemi.jpg" width=115><br><sub>Noemi Larissa - Documentação </sub>](https://github.com/Diana-ops) |  
 | :---: | :---: | 
 
 
