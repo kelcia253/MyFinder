@@ -1,33 +1,65 @@
-<?php 
+<?php
 session_start();
-include_once("conexao.php");
-$result_usuario = "SELECT * FROM produtos WHERE id_produtos="3"";
-$resultado_usuario = mysqli_query($conn, $result_usuario);
-$row_usuario = mysqli_fetch_assoc($resultado_usuario);
+include("conexao.php");
 
+if (isset($_POST['id_produtos'])) {
+    $id_produtos = $_POST['id_produtos'];
+
+    // Estabelecer a conexão com o banco de dados
+    $conexao = mysqli_connect("localhost", "root", "", "myfinder");
+
+    // Verificar se a conexão foi estabelecida com sucesso
+    if (mysqli_connect_errno()) {
+        echo "Falha na conexão com o banco de dados: " . mysqli_connect_error();
+        exit();
+    }
+
+    // Preparar a consulta SQL
+    $sql_code = "SELECT * FROM produtos WHERE id_produtos = '$id_produtos'";
+
+    // Executar a consulta SQL
+    $resultado = mysqli_query($conexao, $sql_code);
+
+    // Verificar se a consulta foi executada com sucesso
+    if ($resultado) {
+        // Verificar se foram encontrados registros
+        if (mysqli_num_rows($resultado) > 0) {
+            // Loop para processar cada registro retornado pela consulta
+            while ($row = mysqli_fetch_assoc($resultado)) {
+                // Acessar os valores retornados do banco de dados
+                $id = $row['id_produtos'];
+                $nome = $row['nome'];
+                $preco  = $row['preco'];
+                $descricao = $row['descricao'];
+                $link = $row['link'];
+                $imagem = $row['imagem'];
+
+                // Realizar qualquer ação necessária com os valores obtidos
+            }
+        } else {
+            echo "Nenhum registro encontrado.";
+        }
+    } else {
+        echo "Erro na execução da consulta: " . mysqli_error($conexao);
+    }
+
+    // Fechar a conexão com o banco de dados
+    mysqli_close($conexao);
+}
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
 
-
-
-
-<<!DOCTYPE html>
-<html>
-    
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Editar produto</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='configuraçoes.css'>
-    <link rel = 'stylesheet' type = 'text/css' media='screen' href='../css/bootstrap.min.css'>
-    <script src='../js/bootstrap.bundle.min.js'></script>
-    <script src='main.js'></script>
-   
-    <link rel='stylesheet' type='text/css' media='screen' href='telaNovoProduto.css'>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Produto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./tela_edit.css">
 </head>
- 
+
 <body class="text-center">
     <!--MENU de notificação-->
      
@@ -70,44 +102,39 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
       <br>
       <br>
       <div class="add">
+    <div class="container">
     
-<form class="form-signin" action="EditarProduto.php" method="post" enctype="multipart/form-data">
-    <div class="border border-dark p-2 mb-2 border-2 border" id="borda">
-        <h1 class="h3 mb-3 font-weight-normal align-self-center">Edite um  produto</h1>
-        <label for="inputNome" class="sr-only"></label> 
-        <input type="text" name="nome" id="inputNome" class="form-control" placeholder="Nome do produto..." value = "<?php echo $row_usuario['nome'];?>"required autofocus>
-        <label for="inputPreco" class="sr-only"></label>
-        <input type="text" name="preco" id="inputPreco" class="form-control" placeholder="Digite o preço..." required >
-        <label for="inputDescricao" class="sr-only"></label>
-        <input type="text" name="descricao" id="inputdescricao" class="form-control" placeholder="Descrição..." required>
-        <label for="inputPassword" class="sr-only"></label>
-        <input type="text" name="link" id="inputLink" class="form-control" placeholder="Link..." required>
-        <label for="inputLink" class="sr-only"></label>
-        <label for="imagem">Selecione uma imagem:</label> 
-  <input type="file"  name="file">
-  <br>
-  <br>
-  <br>
-
-
-
-        <div id="botaoNovo">
-    <button class="btn btn-Lg btn-dark btn-block" type="submit" name="acao" value="enviar">Salvar</button>
+        <form class="form-signin" method="POST" action="salvar_edit.php">
+        <div class="border border-dark p-2 mb-2 border-2 border" id="borda">
+        <h1 class="h3 mb-3 font-weight-normal align-self-center">Edite um produto</h1>
+            <input type="hidden" name="id_produtos" value="<?php echo $id; ?>">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" class="form-control" id="nome" name="nome" value="<?php echo $nome; ?>">
+            </div>
+            <div class="form-group">
+                <label for="preco">Preço:</label>
+                <input type="text" class="form-control" id="preco" name="preco" value="<?php echo $preco; ?>">
+            </div>
+            <div class="form-group">
+                <label for="descricao">Descrição:</label>
+                <textarea class="form-control" id="descricao" name="descricao" rows="3"><?php echo $descricao; ?></textarea>
+            </div>
+            <div class="form-group">
+                <label for="link">Link:</label>
+                <input type="text" class="form-control" id="link" name="link" value="<?php echo $link; ?>">
+            </div>
+            <div class="form-group">
+                <label for="imagem">URL da Imagem:</label>
+                <input type="text" class="form-control" id="imagem" name="imagem" value="<?php echo $imagem; ?>">
+                <div id="botaoNovo">
+    <button class="btn btn-Lg btn-dark btn-block" type="submit" name="acao" value="enviar">Adicionar</button>
     <button class="btn btn-Lg btn-dark btn-block" type="reset">Limpar</button>
     </div>
     <p class="mt-5 mb-3 text-muted">Desde 2023</p>
-    </form>   
-
- 
-
-   
-   
-
-    
+        </form>
     </div>
-    </div>
-   
-    
+</div>
 </body>
- 
+
 </html>

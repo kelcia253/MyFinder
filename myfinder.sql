@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Maio-2023 às 19:02
+-- Tempo de geração: 01-Jun-2023 às 18:35
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 7.4.23
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cliente` (
-  `id_cliente` int(100) NOT NULL,
+  `id_cliente` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `senha` varchar(200) NOT NULL
@@ -41,7 +41,8 @@ CREATE TABLE `cliente` (
 INSERT INTO `cliente` (`id_cliente`, `nome`, `email`, `senha`) VALUES
 (1, 'Noemi', 'neomi@gmail.com', '202cb962ac59075b964b07152d234b70'),
 (2, 'Matheus', 'matheus@gmail.com', '202cb962ac59075b964b07152d234b70'),
-(3, 'Nefi', 'Nefi@gmail.com', '202cb962ac59075b964b07152d234b70');
+(3, 'Nefi', 'Nefi@gmail.com', '202cb962ac59075b964b07152d234b70'),
+(4, 'Admin', 'Admin@gmail.com', 'adm123');
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,7 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_cliente` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
