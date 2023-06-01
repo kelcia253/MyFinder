@@ -11,13 +11,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $imagem = mysqli_real_escape_string($conexao, $_POST['imagem']);
 
   // Atualizar os dados do produto no banco de dados usando uma instrução preparada
-  $sql = "UPDATE produtos SET nome=?, descricao=?, link=?, preco=?, imagem=? WHERE id_produtos=?";
-  $stmt = $conexao->prepare($sql);
-  $stmt->bind_param("sssisi", $nome, $descricao, $link, $preco, $imagem, $id_produtos);
-  $stmt->execute();
+  $sql = "UPDATE produtos SET nome='$nome', descricao='$descricao', link='$link', preco='$preco', imagem='$imagem' WHERE id_produtos='$id_produtos'";
+  $result = mysqli_query($conexao, $sql);
+  
+ $data = '';
+  $sql = "INSERT INTO historico_produtos (nome, preco, data, id_produtos) VALUES ('$nome', '$preco', '$data', '$id_produtos')";
+  $result = mysqli_query($conexao, $sql);
+
 
   // Redirecionar para o arquivo "MeusProdutos.php" após salvar as alterações
-  header("Location: MeusProdutos.php");
+ header("Location: MeusProdutos.php");
   exit();
 }
 ?>

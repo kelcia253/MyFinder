@@ -45,9 +45,14 @@ $imagem = "";
 
     $sql = "INSERT INTO produtos (nome, preco, descricao, link, imagem, fk_cliente) VALUES ('$nome', '$preco', '$descricao', '$link', '$imagem', '$fk_cliente')";
     $result = mysqli_query($conexao, $sql);
-    
+  $id_produtos = mysqli_insert_id($conexao);
+  
+    $data = '';
+    $sql = "INSERT INTO historico_produtos (nome, preco, data, id_produtos) VALUES ('$nome', '$preco', '$data', '$id_produtos')";
+    $result = mysqli_query($conexao, $sql);
 
-    header("Location: MeusProdutos.php");
+
+   header("Location: MeusProdutos.php");
 
 
 
