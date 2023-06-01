@@ -57,7 +57,7 @@ if (isset($_POST['id_produtos'])) {
     <title>Editar Produto</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./tela_edit.css">
+    <link rel="stylesheet" href="./telaNovoProduto.css">
 </head>
 
 <body class="text-center">
@@ -127,6 +127,9 @@ if (isset($_POST['id_produtos'])) {
             <div class="form-group">
                 <label for="imagem">URL da Imagem:</label>
                 <input type="text" class="form-control" id="imagem" name="imagem" value="<?php echo $imagem; ?>">
+                <br>
+  <br>
+  <br>
                 <div id="botaoNovo">
     <button class="btn btn-Lg btn-dark btn-block" type="submit" name="acao" value="enviar">Adicionar</button>
     <button class="btn btn-Lg btn-dark btn-block" type="reset">Limpar</button>
