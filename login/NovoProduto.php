@@ -17,7 +17,7 @@ $imagem = "";
      $arquivo = $_FILES['file'];
      $arquivoNovo = explode('.', $arquivo['name']);
      if($arquivoNovo[sizeof($arquivoNovo)-1] !='jpg'){
-         die('Este tipo de arquivo não pode fazer upload');
+         die('Este tipo de arquivo não pode fazer upload ou este campo não poder ser vazio');
 
      }else{
          echo "Upload ok!";

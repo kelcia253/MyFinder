@@ -88,7 +88,7 @@ if(isset($_POST['botaoId'])){
       <a href="<?php echo $link; ?>" class="btn btn-lg btn-dark btn-block" target="_blank">Visitar</a>
     </div>
     <div class="flex-item">
-      <button class="btn btn-lg btn-dark btn-block" type="submit" name="edita" href="./EditarProduto.php">Editar Produto</button>
+      <button class="btn btn-lg btn-dark btn-block" type="submit" name="edita" onclick="window.location.href = './tela_edit.php'">Editar Produto</button>
     </div>
     <div class="flex-item">
       <button class="btn btn-lg btn-dark btn-block" type="submit" name="remove" href="./RemoverProduto.php">Remover Produto</button>
