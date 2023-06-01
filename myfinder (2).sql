@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Jun-2023 às 18:35
+-- Tempo de geração: 01-Jun-2023 às 21:39
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 7.4.23
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cliente` (
-  `id_cliente` int NOT NULL AUTO_INCREMENT,
+  `id_cliente` int(100) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `senha` varchar(200) NOT NULL
@@ -42,7 +42,7 @@ INSERT INTO `cliente` (`id_cliente`, `nome`, `email`, `senha`) VALUES
 (1, 'Noemi', 'neomi@gmail.com', '202cb962ac59075b964b07152d234b70'),
 (2, 'Matheus', 'matheus@gmail.com', '202cb962ac59075b964b07152d234b70'),
 (3, 'Nefi', 'Nefi@gmail.com', '202cb962ac59075b964b07152d234b70'),
-(4, 'Admin', 'Admin@gmail.com', 'adm123');
+(5, 'kel', 'kel@gmail.com', '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 
@@ -57,8 +57,15 @@ CREATE TABLE `produtos` (
   `link` varchar(500) NOT NULL,
   `imagem` varchar(250) DEFAULT NULL,
   `fk_cliente` int(100) DEFAULT NULL,
-  `preco` int(100) NOT NULL
+  `preco` decimal(10,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `produtos`
+--
+
+INSERT INTO `produtos` (`id_produtos`, `nome`, `descricao`, `link`, `imagem`, `fk_cliente`, `preco`) VALUES
+(13, 'Frigobar Philco 87 Litros PFG100R RetrÃ´', 'O Frigobar Brastemp RetrÃ´ 76 litros resgata uma lembranÃ§a vintage. Tem pÃ©s palito e tambÃ©m os clÃ¡ssicos puxador e logo â€œBrastempâ€, ambos originais da marca nos anos 50. Suas cores trazem o espÃ­rito retrÃ´ para o contexto de um ambiente contemporÃ¢neo. Lindo e combina com todos os estilos! EspÃ­rito Vintage em ambiente contemporÃ¢neo Este frigobar Brastemp RetrÃ´ traz para vocÃª um passado de elegÃ¢ncia e qualidade, e ao mesmo tempo vigor e entusiasmo, como a vida moderna. A cor vermelh', 'https://www.compracerta.com.br/frigobar-brastemp-retro-76-litros-vermelho---bra08av-2000439/p', 'imagensProduto/20230601212922frigobar.jpg', 5, '0.00');
 
 --
 -- Índices para tabelas despejadas
@@ -85,13 +92,13 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_cliente` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id_produtos` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_produtos` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Restrições para despejos de tabelas

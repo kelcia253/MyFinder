@@ -1,31 +1,52 @@
+
 <?php
-include "conexão.php";
-if (isset($_POST['botaoId'])) {
-    $id_produtos = $_POST['id_produtos'];
+include('protect.php');
 
-    // Estabelecer a conexão com o banco de dados
-    $conexao = mysqli_connect("localhost", "root", "", "myfinder");
+require_once ('conexao.php');
 
-    // Verificar se a conexão foi estabelecida com sucesso
-    if (mysqli_connect_errno()) {
-        echo "Falha na conexão com o banco de dados: " . mysqli_connect_error();
-        exit();
-    }
+// Verificar se foi fornecido um valor para 'relato_id'
+if (isset($_POST['id_produtos'])) {
+  $relato_id = mysqli_real_escape_string($conexao, $_POST['id_produtos']);
 
-    // Preparar a consulta SQL
-    $sql_code = "DELETE FROM produtos WHERE id_produtos = '$id_produtos'";
+  $sql = "DELETE FROM produtos WHERE id_produtos = ?";
+  $stmt = $conexao->prepare($sql);
+  $stmt->bind_param("i", $relato_id);
+  
+  if ($stmt->execute()) {
+    
 
-    // Executar a consulta SQL
-    $resultado = mysqli_query($conexao, $sql_code);
+    ?>
+    <div class="alert alert-success"><p><?php  echo "Produto excluído com sucesso!";?>
+    <br>
+<a href="./MeusProdutos.php">Voltar aos Meus produtos</a>
+</p>
 
-    // Verificar se a consulta foi executada com sucesso
-    if ($resultado) {
-        echo "Registro excluído com sucesso.";
-    } else {
-        echo "Erro na exclusão do registro: " . mysqli_error($conexao);
-    }
+</div>
+    <?php
+  } else {
+    ?>
+    <div class="alert alert-danger"><p><?php echo "Erro ao excluir o produto: " . $stmt->error;?></p></div>
+    <?php
+  }
 
-    // Fechar a conexão com o banco de dados
-    mysqli_close($conexao);
+  $stmt->close();
+  $conexao->close();
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</head>
+<body>
+
+</body>
+</html>
+
+

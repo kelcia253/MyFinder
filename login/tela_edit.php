@@ -131,8 +131,9 @@ if (isset($_POST['id_produtos'])) {
   <br>
   <br>
                 <div id="botaoNovo">
-    <button class="btn btn-Lg btn-dark btn-block" type="submit" name="acao" value="enviar">Adicionar</button>
-    <button class="btn btn-Lg btn-dark btn-block" type="reset">Limpar</button>
+    <button class="btn btn-Lg btn-dark btn-block" type="submit" name="acao" value="enviar">Salvar</button>
+    <button class="btn btn-Lg btn-dark btn-block" type="submit" onclick="window.location.href = '../login/MeusProdutos.php'">Cancelar</button>
+    
     </div>
     <p class="mt-5 mb-3 text-muted">Desde 2023</p>
         </form>
