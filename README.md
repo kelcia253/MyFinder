@@ -88,7 +88,6 @@ Se for o caso, liste tarefas/funcionalidades que ainda precisam ser implementada
 
 :memo: Tarefa 2 : 
 
-:memo: Tarefa 3 
 
 ## Desenvolvedores/Contribuintes :octocat:
 
