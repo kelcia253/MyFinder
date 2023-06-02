@@ -10,6 +10,8 @@
     <link rel = 'stylesheet' type = 'text/css' media='screen' href='../css/bootstrap.min.css'>
     <script src='../js/bootstrap.bundle.min.js'></script>
     <script src='main.js'></script>
+
+    
    
     <link rel='stylesheet' type='text/css' media='screen' href='telaNovoProduto.css'>
     
@@ -63,8 +65,12 @@
         <h1 class="h3 mb-3 font-weight-normal align-self-center">Adicione um novo produto</h1>
         <label for="inputNome" class="sr-only"></label> 
         <input type="text" name="nome" id="inputNome" class="form-control" placeholder="Nome do produto..." required autofocus>
+       
+       
         <label for="inputPreco" class="sr-only"></label>
         <input  type="text" name="preco" id="inputPreco" class="form-control" placeholder="Digite o preço..." required >
+        
+        
         <label for="inputDescricao" class="sr-only"></label>
         <input type="text" name="descricao" id="inputdescricao" class="form-control" placeholder="Descrição..." required>
         <label for="inputPassword" class="sr-only"></label>
@@ -79,11 +85,12 @@
 
 
         <div id="botaoNovo">
-    <button class="btn btn-Lg btn-dark btn-block" type="submit" name="acao" value="enviar">Adicionar</button>
-    <button class="btn btn-Lg btn-dark btn-block" type="reset">Limpar</button>
+    <button class="btn btn-Lg btn-dark btn-block" type="submit" onclick="verificar()" ; name="acao" value="enviar">Adicionar</button>
+    <button class="btn btn-Lg btn-dark btn-block" type="reset" onclick="limpar()";>Limpar</button>
     </div>
     <p class="mt-5 mb-3 text-muted">Desde 2023</p>
-    </form>   
+    </form> 
+    <p id="mesg"></p>  
 
  
 
@@ -93,7 +100,7 @@
     
     </div>
     </div>
-   
+    <script src="./js/erro.js"></script>
     
 </body>
  

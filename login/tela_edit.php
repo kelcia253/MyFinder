@@ -114,7 +114,7 @@ if (isset($_POST['id_produtos'])) {
             </div>
             <div class="form-group">
                 <label for="preco">Preço:</label>
-                <input type="text"  class="form-control" id="preco" name="preco" value="<?php echo $preco; ?>">
+                <input type="text"  class="form-control" id="preco" name="preco" value="<?php echo $preco; ?>" required>
             </div>
             <div class="form-group">
                 <label for="descricao">Descrição:</label>

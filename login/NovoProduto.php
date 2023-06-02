@@ -48,7 +48,7 @@ $imagem = "";
   $id_produtos = mysqli_insert_id($conexao);
   
     $data = '';
-    $sql = "INSERT INTO historico_produtos (nome, preco, data, id_produtos) VALUES ('$nome', '$preco', '$data', '$id_produtos')";
+    $sql = "INSERT INTO historicoProdutos (nome, preco, data, id_produtos) VALUES ('$nome', '$preco', '$data', '$id_produtos')";
     $result = mysqli_query($conexao, $sql);
 
 
