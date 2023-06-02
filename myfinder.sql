@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Jun-2023 às 21:39
--- Versão do servidor: 10.4.21-MariaDB
--- versão do PHP: 7.4.23
+-- Tempo de geração: 02-Jun-2023 às 02:10
+-- Versão do servidor: 10.4.27-MariaDB
+-- versão do PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `cliente` (
   `nome` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `senha` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Extraindo dados da tabela `cliente`
@@ -42,7 +42,20 @@ INSERT INTO `cliente` (`id_cliente`, `nome`, `email`, `senha`) VALUES
 (1, 'Noemi', 'neomi@gmail.com', '202cb962ac59075b964b07152d234b70'),
 (2, 'Matheus', 'matheus@gmail.com', '202cb962ac59075b964b07152d234b70'),
 (3, 'Nefi', 'Nefi@gmail.com', '202cb962ac59075b964b07152d234b70'),
-(5, 'kel', 'kel@gmail.com', '202cb962ac59075b964b07152d234b70');
+(5, 'kel', 'kel@gmail.com', '202cb962ac59075b964b07152d234b70'),
+(6, 'Admin', 'Admin@gmail.com', '80177534a0c99a7e3645b52f2027a48b');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `historicoprodutos`
+--
+
+CREATE TABLE `historicoprodutos` (
+  `nome` varchar(100) NOT NULL,
+  `preco` varchar(100) NOT NULL,
+  `data` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -58,14 +71,17 @@ CREATE TABLE `produtos` (
   `imagem` varchar(250) DEFAULT NULL,
   `fk_cliente` int(100) DEFAULT NULL,
   `preco` decimal(10,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Extraindo dados da tabela `produtos`
 --
 
 INSERT INTO `produtos` (`id_produtos`, `nome`, `descricao`, `link`, `imagem`, `fk_cliente`, `preco`) VALUES
-(13, 'Frigobar Philco 87 Litros PFG100R RetrÃ´', 'O Frigobar Brastemp RetrÃ´ 76 litros resgata uma lembranÃ§a vintage. Tem pÃ©s palito e tambÃ©m os clÃ¡ssicos puxador e logo â€œBrastempâ€, ambos originais da marca nos anos 50. Suas cores trazem o espÃ­rito retrÃ´ para o contexto de um ambiente contemporÃ¢neo. Lindo e combina com todos os estilos! EspÃ­rito Vintage em ambiente contemporÃ¢neo Este frigobar Brastemp RetrÃ´ traz para vocÃª um passado de elegÃ¢ncia e qualidade, e ao mesmo tempo vigor e entusiasmo, como a vida moderna. A cor vermelh', 'https://www.compracerta.com.br/frigobar-brastemp-retro-76-litros-vermelho---bra08av-2000439/p', 'imagensProduto/20230601212922frigobar.jpg', 5, '0.00');
+(13, 'Frigobar Philco 87 Litros PFG100R RetrÃ´', 'O Frigobar Brastemp RetrÃ´ 76 litros resgata uma lembranÃ§a vintage. Tem pÃ©s palito e tambÃ©m os clÃ¡ssicos puxador e logo â€œBrastempâ€, ambos originais da marca nos anos 50. Suas cores trazem o espÃ­rito retrÃ´ para o contexto de um ambiente contemporÃ¢neo. Lindo e combina com todos os estilos! EspÃ­rito Vintage em ambiente contemporÃ¢neo Este frigobar Brastemp RetrÃ´ traz para vocÃª um passado de elegÃ¢ncia e qualidade, e ao mesmo tempo vigor e entusiasmo, como a vida moderna. A cor vermelh', 'https://www.compracerta.com.br/frigobar-brastemp-retro-76-litros-vermelho---bra08av-2000439/p', 'imagensProduto/20230601212922frigobar.jpg', 5, '0.00'),
+(16, 'gato', 'hghgjhghghj', 'jhkjhjkhkjhkj', 'imagensProduto/20230602011418casa.jpg', 6, '0.00'),
+(17, 'dfgdfgfgdfg', 'fdsfsddsfsdfsd', 'dfssd', 'imagensProduto/20230602014513casa.jpg', 6, '0.00'),
+(18, 'dsfsd', 'dfdsf', 'dsfsdf', 'imagensProduto/20230602020628casa.jpg', 6, '0.00');
 
 --
 -- Índices para tabelas despejadas
@@ -92,13 +108,13 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_cliente` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id_produtos` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_produtos` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Restrições para despejos de tabelas
