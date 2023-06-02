@@ -78,7 +78,7 @@ ordenados conforme as necessidades do mesmo.
 
 ## Resolvendo Problemas :exclamation:
 
-Em [issues]() O web scraping funcionou, mas não foi contínuo
+Em [issues]() Foi desenvolvido um método manual de inserir o preço como alternativa ao web scraping.
 
 ## Tarefas em aberto
 
@@ -86,7 +86,7 @@ Se for o caso, liste tarefas/funcionalidades que ainda precisam ser implementada
 
 :memo: Tarefa 1 : Desenvolver o web scraping
 
-:memo: Tarefa 2 : 
+:memo: Tarefa 2 : Gerar gráficos com o histórico de preços
 
 
 ## Desenvolvedores/Contribuintes :octocat:
