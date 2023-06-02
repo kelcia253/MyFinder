@@ -54,6 +54,8 @@ ordenados conforme as necessidades do mesmo.
 4. Inicialize o servidor APACHE e o MySQL no xampp
 5. Copie o código myfinder.sql
 6. Abra o servidor do xampp e crie um banco de dados chamado "myfinder" e cole o código
+7. Execute 
+8. Abra uma aba do google ou firefox(recomendavel) e pesquise https://localhost/MyFinder/telaInicial.html
 
 
 
