@@ -79,6 +79,7 @@
     // Verifica se a tecla pressionada é um número, vírgula ou ponto
     if (!/[\d,\.]/.test(key)) {
       event.preventDefault();
+  
     }
   });
 </script>
