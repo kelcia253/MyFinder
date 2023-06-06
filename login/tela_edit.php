@@ -115,6 +115,20 @@ if (isset($_POST['id_produtos'])) {
             <div class="form-group">
                 <label for="preco">Preço:</label>
                 <input type="text"  class="form-control" id="preco" name="preco" value="<?php echo $preco; ?>" required>
+                
+                <script>
+  var input = document.getElementById('preco');
+
+  input.addEventListener('keypress', function(event) {
+    var key = event.key;
+
+    // Verifica se a tecla pressionada é um número, vírgula ou ponto
+    if (!/[\d,\.]/.test(key)) {
+      event.preventDefault();
+    }
+  });
+</script>
+
             </div>
             <div class="form-group">
                 <label for="descricao">Descrição:</label>

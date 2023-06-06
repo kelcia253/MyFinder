@@ -68,7 +68,22 @@
        
        
         <label for="inputPreco" class="sr-only"></label>
-        <input  type="text" name="preco" id="inputPreco" class="form-control" placeholder="Digite o preço..." required >
+        <input  type="text" name="preco" id="valorContaReceber" class="form-control" placeholder="Digite o preço..." maxlength="10" required >
+       
+       <script>
+  var input = document.getElementById('valorContaReceber');
+
+  input.addEventListener('keypress', function(event) {
+    var key = event.key;
+
+    // Verifica se a tecla pressionada é um número, vírgula ou ponto
+    if (!/[\d,\.]/.test(key)) {
+      event.preventDefault();
+    }
+  });
+</script>
+
+        
         
         
         <label for="inputDescricao" class="sr-only"></label>
@@ -100,6 +115,7 @@
     
     </div>
     </div>
+    <script src="./inputMask/jquery.inputmask.js"></script>
     <script src="./js/erro.js"></script>
     
 </body>

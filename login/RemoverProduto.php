@@ -25,7 +25,9 @@ if (isset($_POST['id_produtos'])) {
     <?php
   } else {
     ?>
-    <div class="alert alert-danger"><p><?php echo "Erro ao excluir o produto: " . $stmt->error;?></p></div>
+    <div class="alert alert-danger"><p><?php echo "Falha ao excluir! Você tem um histórico ligado a este produto! " ;?>
+    <br>
+<a href="./MeusProdutos.php">Voltar aos Meus produtos</a></p></div>
     <?php
   }
 
