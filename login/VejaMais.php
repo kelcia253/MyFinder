@@ -103,18 +103,9 @@ if (isset($_POST['botaoId'])) {
         </div>
     </div>
 
-    <?php 
 
- //$pesquisa = mysqli_real_escape_string ($conexao,trim($_POST['titulo']));
 
-    
-    
-    
-    
-    
-    
-    
-    ?>
+  
 
 </body>
 
