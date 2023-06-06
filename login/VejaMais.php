@@ -16,9 +16,13 @@ if (isset($_POST['botaoId'])) {
 
     // Preparar a consulta SQL
     $sql_code = "SELECT * FROM produtos WHERE id_produtos = '$id_produtos'";
+    
+ 
+   
 
     // Executar a consulta SQL
     $resultado = mysqli_query($conexao, $sql_code);
+
 
     // Verificar se a consulta foi executada com sucesso
     if ($resultado) {
@@ -42,6 +46,8 @@ if (isset($_POST['botaoId'])) {
     } else {
         echo "Erro na execução da consulta: " . mysqli_error($conexao);
     }
+
+   
 
     // Fechar a conexão com o banco de dados
     mysqli_close($conexao);
@@ -96,6 +102,20 @@ if (isset($_POST['botaoId'])) {
             </div>
         </div>
     </div>
+
+    <?php 
+
+ //$pesquisa = mysqli_real_escape_string ($conexao,trim($_POST['titulo']));
+
+    
+    
+    
+    
+    
+    
+    
+    ?>
+
 </body>
 
 </html>
