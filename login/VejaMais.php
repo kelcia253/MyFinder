@@ -16,12 +16,41 @@ if (isset($_POST['botaoId'])) {
 
     // Preparar a consulta SQL
     $sql_code = "SELECT * FROM produtos WHERE id_produtos = '$id_produtos'";
+    $sql_code_his = "SELECT * FROM historicoprodutos WHERE id_produtos = '$id_produtos'";
+
     
  
    
 
     // Executar a consulta SQL
     $resultado = mysqli_query($conexao, $sql_code);
+    $resultado_his = mysqli_query($conexao, $sql_code_his);
+    if ($resultado_his) {
+        // Verificar se foram encontrados registros
+        if (mysqli_num_rows($resultado_his) > 0) {
+            // Loop para processar cada registro retornado pela consulta
+            while ($row = mysqli_fetch_assoc($resultado_his)) {
+                $id_historico = $row['id_historico'];
+                $id_produtos_his = $row['id_produtos'];
+                $nome_his = $row['nome'];
+                $preco_his = $row['preco'];
+                $data_his = $row['data'];
+            
+                // Realize qualquer ação necessária com os valores obtidos
+            }
+            
+                
+
+                // Realizar qualquer ação necessária com os valores obtidos
+            }
+        } else {
+            echo "Nenhum registro encontrado.";
+        }
+    } else {
+        echo "Erro na execução da consulta: " . mysqli_error($conexao);
+    }
+
+
 
 
     // Verificar se a consulta foi executada com sucesso
@@ -48,10 +77,11 @@ if (isset($_POST['botaoId'])) {
     }
 
    
+   
 
     // Fechar a conexão com o banco de dados
     mysqli_close($conexao);
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -70,6 +100,9 @@ if (isset($_POST['botaoId'])) {
 <body>
 <h1><?php echo " " . $nome . "<br>";?></h1>
 <hr>
+
+<?php echo $preco_his; ?>
+<?php echo $preco_his; ?>
 
 <div class="veja">
   <div class="img">
