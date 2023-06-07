@@ -15,15 +15,36 @@ if (isset($_POST['id_produtos'])) {
 
   if ($num_rows > 0) {
     // Existem registros relacionados na tabela 'historicoprodutos'
-    ?>
-    <div class="alert alert-danger">
-      <p>Falha ao excluir! Existem registros relacionados na tabela 'historicoprodutos'.</p>
-      <br>
-      <a href="./MeusProdutos.php">Voltar aos Meus produtos</a>
-    </div>
-    <?php
-  } else {
-    
+    $sql_delete = "DELETE FROM historicoprodutos WHERE id_produtos = ?";
+    $stmt_delete = mysqli_prepare($conexao, $sql_delete);
+    mysqli_stmt_bind_param($stmt_delete, "i", $id_produtos);
+    mysqli_stmt_execute($stmt_delete);
+
+    if (mysqli_stmt_affected_rows($stmt_delete) > 0) {
+      // Produto excluído com sucesso
+      ?>
+      <div class="alert alert-success">
+        <p>Histórico excluído com sucesso!</p>
+        <br>
+        <a href="./MeusProdutos.php">Voltar aos Meus produtos</a>
+      </div>
+      <?php
+    } else {
+      // Falha ao excluir o produto
+      ?>
+      <div class="alert alert-danger">
+        <p>Falha ao excluir o histórico!</p>
+        <br>
+        <a href="./MeusProdutos.php">Voltar aos Meus produtos</a>
+      </div>
+      <?php
+    }
+  }
+
+  mysqli_stmt_close($stmt_check);
+  } 
+
+    // Não existem registros relacionados na tabela 'historicoprodutos', pode excluir o produto
 
     $sql_delete = "DELETE FROM produtos WHERE id_produtos = ?";
     $stmt_delete = mysqli_prepare($conexao, $sql_delete);
@@ -49,12 +70,11 @@ if (isset($_POST['id_produtos'])) {
       </div>
       <?php
     }
-  }
+  
 
-  mysqli_stmt_close($stmt_check);
  
   mysqli_close($conexao);
-}
+
 ?>
 
 <!DOCTYPE html>
