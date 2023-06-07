@@ -1,43 +1,65 @@
-
 <?php
-include('protect.php');
+require_once('conexao.php');
 
-require_once ('conexao.php');
-
-// Verificar se foi fornecido um valor para 'relato_id'
+// Verificar se foi fornecido um valor para 'id_produtos'
 if (isset($_POST['id_produtos'])) {
-  $relato_id = mysqli_real_escape_string($conexao, $_POST['id_produtos']);
+  $id_produtos = mysqli_real_escape_string($conexao, $_POST['id_produtos']);
 
-  $sql = "DELETE FROM produtos WHERE id_produtos = ?";
-  $stmt = $conexao->prepare($sql);
-  $stmt->bind_param("i", $relato_id);
-  
-  if ($stmt->execute()) {
-    
+  // Verificar se há registros relacionados na tabela 'historicoprodutos'
+  $sql_check = "SELECT * FROM historicoprodutos WHERE id_produtos = ?";
+  $stmt_check = mysqli_prepare($conexao, $sql_check);
+  mysqli_stmt_bind_param($stmt_check, "i", $id_produtos);
+  mysqli_stmt_execute($stmt_check);
+  mysqli_stmt_store_result($stmt_check);
+  $num_rows = mysqli_stmt_num_rows($stmt_check);
 
+  if ($num_rows > 0) {
+    // Existem registros relacionados na tabela 'historicoprodutos'
     ?>
-    <div class="alert alert-success"><p><?php  echo "Produto excluído com sucesso!";?>
-    <br>
-<a href="./MeusProdutos.php">Voltar aos Meus produtos</a>
-</p>
-
-</div>
+    <div class="alert alert-danger">
+      <p>Falha ao excluir! Existem registros relacionados na tabela 'historicoprodutos'.</p>
+      <br>
+      <a href="./MeusProdutos.php">Voltar aos Meus produtos</a>
+    </div>
     <?php
   } else {
-    ?>
-    <div class="alert alert-danger"><p><?php echo "Falha ao excluir! Você tem um histórico ligado a este produto! " ;?>
-    <br>
-<a href="./MeusProdutos.php">Voltar aos Meus produtos</a></p></div>
-    <?php
+    
+
+    $sql_delete = "DELETE FROM produtos WHERE id_produtos = ?";
+    $stmt_delete = mysqli_prepare($conexao, $sql_delete);
+    mysqli_stmt_bind_param($stmt_delete, "i", $id_produtos);
+    mysqli_stmt_execute($stmt_delete);
+
+    if (mysqli_stmt_affected_rows($stmt_delete) > 0) {
+      // Produto excluído com sucesso
+      ?>
+      <div class="alert alert-success">
+        <p>Produto excluído com sucesso!</p>
+        <br>
+        <a href="./MeusProdutos.php">Voltar aos Meus produtos</a>
+      </div>
+      <?php
+    } else {
+      // Falha ao excluir o produto
+      ?>
+      <div class="alert alert-danger">
+        <p>Falha ao excluir o produto!</p>
+        <br>
+        <a href="./MeusProdutos.php">Voltar aos Meus produtos</a>
+      </div>
+      <?php
+    }
   }
 
-  $stmt->close();
-  $conexao->close();
+  mysqli_stmt_close($stmt_check);
+ 
+  mysqli_close($conexao);
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,9 +68,9 @@ if (isset($_POST['id_produtos'])) {
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
 </body>
+
 </html>
-
-
