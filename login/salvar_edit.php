@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $sql = "UPDATE produtos SET nome='$nome', descricao='$descricao', link='$link', preco='$preco', imagem='$imagem' WHERE id_produtos='$id_produtos'";
   $result = mysqli_query($conexao, $sql);
   
- $data = '';
+ $data = date('Y-m-d');
   $sql = "INSERT INTO historicoProdutos (nome, preco, data, id_produtos) VALUES ('$nome', '$preco', '$data', '$id_produtos')";
   $result = mysqli_query($conexao, $sql);
 

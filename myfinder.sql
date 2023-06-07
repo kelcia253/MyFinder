@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06-Jun-2023 às 21:04
--- Versão do servidor: 10.4.21-MariaDB
--- versão do PHP: 7.4.23
+-- Tempo de geração: 07-Jun-2023 às 15:06
+-- Versão do servidor: 10.4.8-MariaDB
+-- versão do PHP: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -39,10 +40,6 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`id_cliente`, `nome`, `email`, `senha`) VALUES
-(1, 'Noemi', 'neomi@gmail.com', '202cb962ac59075b964b07152d234b70'),
-(2, 'Matheus', 'matheus@gmail.com', '202cb962ac59075b964b07152d234b70'),
-(3, 'Nefi', 'Nefi@gmail.com', '202cb962ac59075b964b07152d234b70'),
-(5, 'kel', 'kel@gmail.com', '202cb962ac59075b964b07152d234b70'),
 (6, 'Admin', 'Admin@gmail.com', '80177534a0c99a7e3645b52f2027a48b');
 
 -- --------------------------------------------------------
@@ -54,19 +51,10 @@ INSERT INTO `cliente` (`id_cliente`, `nome`, `email`, `senha`) VALUES
 CREATE TABLE `historicoprodutos` (
   `nome` varchar(100) NOT NULL,
   `preco` varchar(100) NOT NULL,
-  `data` datetime NOT NULL,
+  `data` date NOT NULL,
   `id_produtos` int(10) DEFAULT NULL,
   `id_historico` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `historicoprodutos`
---
-
-INSERT INTO `historicoprodutos` (`nome`, `preco`, `data`, `id_produtos`, `id_historico`) VALUES
-('gato', '1.350,00', '0000-00-00 00:00:00', 24, 17),
-('ooo', 'ooo', '0000-00-00 00:00:00', 25, 18),
-('sdasdasd', '1.900,00', '0000-00-00 00:00:00', 26, 19);
 
 -- --------------------------------------------------------
 
@@ -83,15 +71,6 @@ CREATE TABLE `produtos` (
   `fk_cliente` int(100) DEFAULT NULL,
   `preco` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `produtos`
---
-
-INSERT INTO `produtos` (`id_produtos`, `nome`, `descricao`, `link`, `imagem`, `fk_cliente`, `preco`) VALUES
-(24, 'gato', 'ggsdfg', 'dfgdfgga', 'imagensProduto/20230606200411gato.jpg', 6, '1.350,00'),
-(25, 'ooo', 'ooo', 'oo', 'imagensProduto/20230606204526gato.jpg', 6, 'ooo'),
-(26, 'sdasdasd', 'asdasd', 'asdasd', 'imagensProduto/20230606205348gato.jpg', 6, '1.900,00');
 
 --
 -- Índices para tabelas despejadas
@@ -131,13 +110,13 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de tabela `historicoprodutos`
 --
 ALTER TABLE `historicoprodutos`
-  MODIFY `id_historico` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_historico` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id_produtos` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_produtos` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- Restrições para despejos de tabelas
