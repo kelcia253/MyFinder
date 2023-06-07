@@ -338,3 +338,36 @@ object-fit: cover;
   50% { background-position: 400% 0; }
   100% { background-position: 0 0; }
 }
+
+.adaptive-heading {
+  font-size: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Ajustar a quantidade de traços para telas maiores */
+@media (min-width: 768px) {
+  .adaptive-heading::after {
+    content: "-----------------------------------------------------------------------------------------------------------------";
+    display: inline-block;
+    white-space: pre;
+  }
+}
+
+/* Ajustar a quantidade de traços para telas menores */
+@media (max-width: 767px) {
+  .adaptive-heading::after {
+    content: "----------------------------------------------------------------------------------------------------";
+    display: inline-block;
+    white-space: pre;
+  }
+}
+
+/* Ajustar a quantidade de traços para telas ainda menores */
+@media (max-width: 480px) {
+  .adaptive-heading::after {
+    content: "----------------------------------------------------------------------------------";
+    display: inline-block;
+    white-space: pre;
+  }
+}

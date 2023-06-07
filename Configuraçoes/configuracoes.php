@@ -1,53 +1,73 @@
 <?php
 session_start();
-include("conexao.php");
+require_once('../login/conexao.php');
+// Recuperar os dados do cliente para exibir no formulário de edição
+$id_cliente = isset($_SESSION["user"]) ? $_SESSION["user"] : 0;
 
-if (isset($_POST['id_cliente'])) {
-    $id_cliente = $_POST['id_cliente'];
-
-    // Estabelecer a conexão com o banco de dados
-    $conexao = mysqli_connect("localhost", "root", "", "myfinder");
-
-    // Verificar se a conexão foi estabelecida com sucesso
-    if (mysqli_connect_errno()) {
-        echo "Falha na conexão com o banco de dados: " . mysqli_connect_error();
-        exit();
-    }
-
-    // Preparar a consulta SQL
-    $sql_code = "SELECT * FROM cliente WHERE id_cliente = '$id_cliente'";
-
-    // Executar a consulta SQL
-    $resultado = mysqli_query($conexao, $sql_code);
-
-    // Verificar se a consulta foi executada com sucesso
-    if ($resultado) {
-        // Verificar se foram encontrados registros
-        if (mysqli_num_rows($resultado) > 0) {
-            // Loop para processar cada registro retornado pela consulta
-            while ($row = mysqli_fetch_assoc($resultado)) {
-                // Acessar os valores retornados do banco de dados
-                $id = $row['id_cliente'];
-                $nome = $row['nome'];
-                $email  = $row['email'];
-                $senha = $row['senha'];
-                $senha = md5($senha);
-              
-
-                // Realizar qualquer ação necessária com os valores obtidos
-            }
-        } else {
-            echo "Nenhum registro encontrado.";
-        }
+if ($id_cliente > 0) {
+    $sql = "SELECT * FROM cliente WHERE id_cliente = $id_cliente";
+    $resultado = $conexao->query($sql);
+    if ($resultado->num_rows > 0) {
+        $cliente = $resultado->fetch_assoc();
+        $nome = $cliente["nome"];
+        $email = $cliente["email"];
     } else {
-        echo "Erro na execução da consulta: " . mysqli_error($conexao);
+        echo "Cliente não encontrado.";
     }
+} else {
+    echo "ID do cliente não fornecido.";
+}
 
-    // Fechar a conexão com o banco de dados
-    mysqli_close($conexao);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Receber os dados do formulário
+    $nome = $_POST["nome"];
+    $email = $_POST["email"];
+    $senha = $_POST["senha"];
+
+    $senha = md5($senha);
+
+    // Atualizar o registro do cliente no banco de dados
+    $sql = "UPDATE cliente SET nome = '$nome', email = '$email', senha = '$senha' WHERE id_cliente = $id_cliente";
+
+    if ($conexao->query($sql) === true) {
+      ?>
+      <div class="alert alert-success">
+        <p>Usuário editado com sucesso</p>
+        <br>
+        <a href="../login/posLogin.php">Voltar a tela principal</a>
+      </div>
+      <?php
+
+     
+
+// Redirecionar o usuário para outra página
+
+    } else {
+      ?>
+      <div class="alert alert-danger">
+        <p>Falha ao editar usuário!</p>
+        <br>
+        <a href="../login/posLogin">Voltar aos Meus produtos</a>
+      </div>
+      <?php
+    }
+}
+
+// Recuperar os dados do cliente para exibir no formulário de edição
+
+
+$sql = "SELECT * FROM cliente WHERE id_cliente = $id_cliente";
+$resultado = $conexao->query($sql);
+if ($resultado->num_rows > 0) {
+    $cliente = $resultado->fetch_assoc();
+    $nome = $cliente["nome"];
+    $email = $cliente["email"];
+    $senha = $cliente["senha"];
+} else {
+    echo "Cliente não encontrado.";
 }
 ?>
-
 
 
 
@@ -81,7 +101,7 @@ if (isset($_POST['id_cliente'])) {
       <!--MENU de notificação-->
           <nav class="navbar navbar-expand-lg bg-dark">
             <div class="container-fluid">
-              <a class="navbar-brand" href="./posLogin.php" style="color: white">Principal</a>
+              <a class="navbar-brand" href="../login/posLogin.php" style="color: white">Principal</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -103,7 +123,7 @@ if (isset($_POST['id_cliente'])) {
             </div>
           </nav>
           <div class="text-center">
-          <form class="form-signin" action="cadastrar.php" method="post">
+          <form class="form-signin" method="post">
     <div class="border border-dark p-2 mb-2 border-2 border cadastro" id="borda">
         <h1 class="h3 mb-3 font-weight-normal align-self-center">Editar Usuário</h1>
         <label for="inputNome" class="sr-only"></label> 
@@ -111,12 +131,13 @@ if (isset($_POST['id_cliente'])) {
         <label for="inputEmail" class="sr-only"></label>
         <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email"  value="<?php echo $email; ?>"required>
         <label for="inputPassword" class="sr-only"></label>
-        <input type="password" name="senha" id="inputPassword" class="form-control" placeholder="Senha"  value="<?php echo $senha; ?>"required>
+        <input type="password" name="senha" id="inputPassword" class="form-control" placeholder="Senha" required>
         <div id="botaologin">
+        <br>
     <button class="btn btn-Lg btn-dark btn-block" type="submit">Enviar</button>
     <button class="btn btn-Lg btn-dark btn-block" type="reset">Limpar</button>
     </div>
-    <h8>Já tem cadastro? <a href="../login/Login.php">Clique aqui!</a></h8>
+  
     <p class="mt-5 mb-3 text-muted">Desde 2023</p>
     </form>   
     </div>
