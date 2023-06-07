@@ -340,34 +340,9 @@ object-fit: cover;
 }
 
 .adaptive-heading {
-  font-size: 24px;
-  white-space: nowrap;
-  overflow: hidden;
+  position: relative;
 }
 
-/* Ajustar a quantidade de traços para telas maiores */
-@media (min-width: 768px) {
-  .adaptive-heading::after {
-    content: "-----------------------------------------------------------------------------------------------------------------";
-    display: inline-block;
-    white-space: pre;
-  }
-}
-
-/* Ajustar a quantidade de traços para telas menores */
-@media (max-width: 767px) {
-  .adaptive-heading::after {
-    content: "----------------------------------------------------------------------------------------------------";
-    display: inline-block;
-    white-space: pre;
-  }
-}
-
-/* Ajustar a quantidade de traços para telas ainda menores */
-@media (max-width: 480px) {
-  .adaptive-heading::after {
-    content: "----------------------------------------------------------------------------------";
-    display: inline-block;
-    white-space: pre;
-  }
+.adaptar{
+  
 }

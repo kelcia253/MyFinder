@@ -73,8 +73,9 @@ include('conexao.php');
               </div>
           </section>
           </div>
-          <h1 class="adaptive-heading">MyFinder</h1>
+          <h1 class="adaptive-heading">MyFinder -----------------------------------------------------------------------------------------------------------</h1>
           <br>
+          
           <?php
           if(!isset($_POST['pesquisar'])){
             ?>
