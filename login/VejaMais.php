@@ -107,6 +107,11 @@ if (isset($_POST['botaoId'])) {
         </div>
     </div>
 
+    <h2> Histórico de Preços: </h2>
+ 
+
+    <br>
+
     <?php  $sql_code_his = "SELECT * FROM historicoprodutos WHERE id_produtos = '$id_produtos'";
 
 // Executar a consulta SQL
@@ -185,13 +190,7 @@ if ($resultado_his) {
             $cont++;}?>
     </table>
 
-    <div class="flex-item">
-                    <form method="POST" action="RemoverHistorico.php">
-                        <input type="hidden" name="id_produtos" value="<?php echo $id; ?>">
-                        <button type="submit" class="btn btn-lg btn-dark btn-block">Remover</button>
 
-                    </form>
-                </div>
 
 
     <?php
