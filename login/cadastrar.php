@@ -16,7 +16,7 @@ if($row['total'] == 1){
     $_SESSION['cliente_existe'] = true;
      
 
-    header('Location: cadastro.php');
+    header('Location: Login.php');
     exit;
 }
 
@@ -31,7 +31,7 @@ $result = mysqli_query($conexao, $sql);
 
 
 echo("sql: ".$sql);
-header("Location: posLogin.php");
+header("Location: Login.php");
 
 ?>
 
