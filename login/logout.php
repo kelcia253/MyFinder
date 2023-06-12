@@ -3,4 +3,4 @@ if(isset($_SESSION)){
     session_start();
 }
 session_destroy();
-header("Location: ../TelaInicial/TelaInicial.html");
+header("Location: ../TelaInicial/TelaInicial.php");
