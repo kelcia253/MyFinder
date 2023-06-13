@@ -69,6 +69,10 @@ if (isset($_POST['botaoId'])) {
 </head>
 
 <body>
+
+<button class="arrow-button">
+  <span><a href="posLogin.php">&larr;</a></span>
+</button>
     <h1><?php echo " " . $nome . "<br>";?></h1>
     <hr>
 
