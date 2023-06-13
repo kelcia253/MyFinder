@@ -48,7 +48,7 @@ include('conexao.php');
                     <a class="nav-link active meu-produto" aria-current="page" href="./MeusProdutos.php">Meus Produtos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active configuracoes" aria-current="page" href="../Configuraçoes/configuracoes.php">Configurações</a>
+                    <a class="nav-link active configuracoes" aria-current="page" href="../Configuracoes/configuracoes.php">Configurações</a>
                   </li>
                  
                 </ul>
