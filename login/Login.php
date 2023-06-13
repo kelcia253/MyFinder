@@ -77,7 +77,20 @@
         <label for="inputEmail" class="sr-only"></label> 
         <input type="email" class="form-control" name="email" autofocus required placeholder="Digite seu e-mail">
         <label for="inputPassword" class="sr-only"></label>
-        <input type="password" name="senha" class="form-control" required placeholder="Digite sua senha">
+        <input type="password" id="pass"name="senha" class="form-control" required placeholder="Digite sua senha">
+        <input  id="check" type="checkbox"> Visualizar senha</input>
+        <i class="fa-solid fa-eye" style="color: #000000;"></i>
+
+        <script> 
+        check.onclick = togglePassword;
+        function togglePassword(){
+            if(check.checked)pass.type = "text";
+            else pass.type = "password"
+        }
+        
+        
+        
+        </script>
         <div id="botaologin">
     <button class="btn btn-Lg btn-dark btn-block" type="submit">Enviar</button>
     <button class="btn btn-Lg btn-dark btn-block" type="reset">Limpar</button>
