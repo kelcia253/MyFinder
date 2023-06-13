@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: 127.0.0.1
--- Data de Criação: 12-Jun-2023 às 22:09
+-- Data de Criação: 13-Jun-2023 às 16:09
 -- Versão do servidor: 5.5.34
 -- versão do PHP: 5.4.22
 
@@ -63,9 +63,7 @@ CREATE TABLE IF NOT EXISTS `historicoprodutos` (
 --
 
 INSERT INTO `historicoprodutos` (`nome`, `preco`, `data`, `id_produtos`, `id_historico`) VALUES
-('Frigobar Brastemp 76 Litros BRA08', '1.599,53', '2023-06-12', 32, 31),
-('iPhone 11 Apple 64GB Preto 6,1â€ 12MP iOS', '2.789,10', '2023-06-12', 35, 36),
-('iPhone 11 Apple 64GB ', '2.789,10', '2023-06-12', 35, 37);
+('Frigobar Brastemp 76 Litros BRA08', '1.599,53', '2023-06-12', 32, 31);
 
 -- --------------------------------------------------------
 
@@ -90,8 +88,7 @@ CREATE TABLE IF NOT EXISTS `produtos` (
 --
 
 INSERT INTO `produtos` (`id_produtos`, `nome`, `descricao`, `link`, `imagem`, `fk_cliente`, `preco`) VALUES
-(32, 'Frigobar Brastemp 76 Litros BRA08', 'Com visual retrÃ´, o frigobar Brastemp 76 litros parece uma mini geladeira dos anos 50, um eletrodomÃ©stico super charmoso para armazenar menores quantidades de comida ou bebida em qualquer espaÃ§o da casa.  A parte interna do frigobar Brastemp tem compartimentos modulares, que podem ser posicionados como vocÃª achar melhor para a organizaÃ§Ã£o interna, compartimento extra frio, porta latas, gavetÃ£o e prateleira na porta para garrafas.  O modelo conta tambÃ©m com um congelador e recipiente para', 'https://www.zoom.com.br/frigobar/frigobar-bra08a-brastemp-retro-76-litros#lista-de-ofertas', 'imagensProduto/20230612215314-465884715.jpg', 7, '1.599,53'),
-(35, 'iPhone 11 Apple 64GB ', 'Grave vÃ­deos 4K, faÃ§a belos retratos e capture paisagens inteiras com o novo sistema de cÃ¢mera dupla. Tire fotos incrÃ­veis com pouca luz usando o modo Noite. Veja cores fiÃ©is em fotos, vÃ­deos e jogos na tela Liquid Retina de 6,1 polegadas***. Leve o desempenho sem precedentes do chip A13 Bionic para seus games, realidade aumentada e fotografia. FaÃ§a muito e recarregue pouco com a bateria para o dia todo**. E conte com resistÃªncia Ã  Ã¡gua de atÃ© dois metros por atÃ© 30 minutos*.Avisos l', 'https://www.magazineluiza.com.br/iphone-11-apple-64gb-preto-61-12mp-ios/p/155610500/te/ip11/?seller_id=magazineluiza&utm_source=google&utm_medium=pla&utm_campaign=&partner_id=68708&gclid=CjwKCAjwhJukBhBPEiwAniIcNZmvYRLU-n1YC08dAoQz9B__Cmurms3cli9EZ0-9BKYnY3tz6DqmaRoCyGoQAvD_BwE&gclsrc=aw.ds', 'imagensProduto/20230612220228images.jpg', 7, '2.789,10');
+(32, 'Frigobar Brastemp 76 Litros BRA08', 'Com visual retrÃ´, o frigobar Brastemp 76 litros parece uma mini geladeira dos anos 50, um eletrodomÃ©stico super charmoso para armazenar menores quantidades de comida ou bebida em qualquer espaÃ§o da casa.  A parte interna do frigobar Brastemp tem compartimentos modulares, que podem ser posicionados como vocÃª achar melhor para a organizaÃ§Ã£o interna, compartimento extra frio, porta latas, gavetÃ£o e prateleira na porta para garrafas.  O modelo conta tambÃ©m com um congelador e recipiente para', 'https://www.zoom.com.br/frigobar/frigobar-bra08a-brastemp-retro-76-litros#lista-de-ofertas', 'imagensProduto/20230612215314-465884715.jpg', 7, '1.599,53');
 
 --
 -- Constraints for dumped tables
