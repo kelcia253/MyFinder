@@ -86,7 +86,7 @@ if (isset($_POST['botaoId'])) {
         </div>
         <div class="info-produto">
             <h5>Preço: </h5>
-            <p><?php  echo $preco ?></p>
+            <p>R$ <?php  echo $preco ?></p>
             <h5>Descrição: </h5>
             <p><?php echo $descricao; ?></p>
 
@@ -185,7 +185,8 @@ if ($resultado_his) {
       
       ?></th>
                 <td> <?php echo $nome_his; ?></td>
-                <td><?php echo $preco_his; ?></td>
+                <td>R$ <?php echo date('d/m/Y', strtotime($data_his)); ?></td>
+
                 <td><?php echo $data_his; ?></td>
             </tr>
         </tbody>
