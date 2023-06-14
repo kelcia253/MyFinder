@@ -2,7 +2,7 @@
 
 
 <?php
-session_start();
+include('../login/protect.php');
 require_once('../login/conexao.php');
 // Recuperar os dados do cliente para exibir no formulário de edição
 $id_cliente = isset($_SESSION["user"]) ? $_SESSION["user"] : 0;

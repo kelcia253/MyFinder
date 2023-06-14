@@ -1,6 +1,7 @@
 <?php
-session_start();
+
 include('conexao.php');
+include('protect.php');
 
 /*
 if(isset($_POST['botaoId'])){

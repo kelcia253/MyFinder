@@ -1,6 +1,7 @@
 <?php
 require_once('conexao.php');
 
+
 // Verificar se foi fornecido um valor para 'id_produtos'
 if (isset($_POST['id_produtos'])) {
   $id_produtos = mysqli_real_escape_string($conexao, $_POST['id_produtos']);

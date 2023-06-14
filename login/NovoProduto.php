@@ -3,6 +3,7 @@
 session_start();
 include("conexao.php");
 
+
 $nome = mysqli_real_escape_string($conexao,trim($_POST['nome']));
 $preco = mysqli_real_escape_string($conexao,trim($_POST['preco'])); 
 $descricao = mysqli_real_escape_string($conexao,trim($_POST['descricao']));

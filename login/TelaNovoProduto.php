@@ -1,3 +1,9 @@
+<?php
+
+//include('protect.php');
+
+?>
+
 <!DOCTYPE html>
 <html>
     
@@ -43,7 +49,7 @@
                     <a class="nav-link active meu-produto" aria-current="page" href="../login/MeusProdutos.php" style="color: white">Meus Produtos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active configuracoes" aria-current="page" href="../Configuraçoes/configuracoes.php" style="color: white">Configurações</a>
+                    <a class="nav-link active configuracoes" aria-current="page" href="../Configuracoes/configuracoes.php" style="color: white">Configurações</a>
                   </li>
                  
                 </ul>
