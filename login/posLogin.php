@@ -17,8 +17,6 @@ include('conexao.php');
     <link rel='stylesheet' type='text/css' media='screen' href='../css/bootstrap.min.css'>
     <script src='../js/bootstrap.bundle.min.js'></script>
 
-
-    <script src='main.js'></script>
 </head>
 
 <body>
