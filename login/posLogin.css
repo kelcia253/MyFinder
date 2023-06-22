@@ -346,3 +346,13 @@ object-fit: cover;
 .adaptar{
   
 }
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 10px;
+}
