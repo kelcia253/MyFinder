@@ -95,7 +95,7 @@ include('conexao.php');
       while($dados = $sql_query->fetch_assoc()){
         $cont++;
         ?>
-        <form action="VejaMais.php" method="POST">
+        <form action="VejaMaisLogin.php" method="POST">
         <td>
           <div class="card" style="width: 18rem;" name="card">
             <div class="card text-center">
@@ -169,7 +169,7 @@ include('conexao.php');
                 ?>
                 <tr>
                   <td>
-                  <form action="VejaMais.php" method="POST">
+                  <form action="VejaMaisLogin.php" method="POST">
         <td>
           <div class="card" style="width: 18rem;" name="card">
             <div class="card text-center">

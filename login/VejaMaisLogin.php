@@ -93,19 +93,13 @@ if (isset($_POST['botaoId'])) {
                     <a href="<?php echo $link; ?>" class="btn btn-lg btn-dark btn-block" target="_blank">Visitar</a>
                 </div>
                 <div class="flex-item">
-                    <form method="POST" action="tela_edit.php">
+                    <form method="POST" action="tela_editLogin.php">
                         <input type="hidden" name="id_produtos" value="<?php echo $id; ?>">
                         <button type="submit" class="btn btn-lg btn-dark btn-block">Editar</button>
 
                     </form>
                 </div>
-                <div class="flex-item">
-                    <form method="POST" action="RemoverProduto.php">
-                        <input type="hidden" name="id_produtos" value="<?php echo $id; ?>">
-                        <button type="submit" class="btn btn-lg btn-dark btn-block">Remover</button>
-
-                    </form>
-                </div>
+               
             </div>
         </div>
     </div>
