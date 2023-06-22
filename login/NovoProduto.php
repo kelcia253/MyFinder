@@ -1,7 +1,8 @@
 <?php
 //echo $_SERVER['REQUEST_METHOD'];
-session_start();
+
 include("conexao.php");
+include('protect.php');
 
 
 $nome = mysqli_real_escape_string($conexao,trim($_POST['nome']));
